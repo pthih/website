@@ -1,8 +1,8 @@
 (function () {
   "use strict";
-  var link = document.querySelector(".more-about-link");
+  var links = document.querySelectorAll(".more-about-link, .intro-down-link");
   var target = document.getElementById("about-me");
-  if (!link || !target) return;
+  if (!links.length || !target) return;
   var frame = 0;
   var running = false;
   function stop() {
@@ -19,7 +19,7 @@
     target.focus({ preventScroll: true });
     running = false;
   }
-  link.addEventListener("click", function (event) {
+  function activate(event) {
     if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     stop();
@@ -45,7 +45,8 @@
       else frame = requestAnimationFrame(finish);
     }
     frame = requestAnimationFrame(animate);
-  });
+  }
+  links.forEach(function (link) { link.addEventListener("click", activate); });
   window.addEventListener("wheel", stop, { passive: true });
   window.addEventListener("touchstart", stop, { passive: true });
   window.addEventListener("keydown", function (event) {
