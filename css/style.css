@@ -6231,3 +6231,67 @@ h6 {
     font-size: 26px;
   }
 }
+
+/* Portrait clearance below the laptop navigation. */
+@media (min-width: 992px) and (max-width: 1200px) {
+  .slider_area .single_slider .my_img {
+    width: 245px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .slider_area .single_slider .my_img { width: 300px; }
+}
+
+/* Shorten the desktop banner to bring the portrait closer to navigation. */
+@media (min-width: 1201px) {
+  .slider_area .single_slider .slider_text { padding: 180px 0; }
+}
+
+/* Show the portrait below the introduction on phones and tablets. */
+@media (max-width: 991px) {
+  .slider_area .single_slider .slider_text {
+    padding: 130px 0 24px;
+  }
+  .slider_area .single_slider .slider_text h3.personal-intro {
+    margin-bottom: 0;
+  }
+  .slider_area .single_slider .my_img {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 220px;
+    max-width: 70%;
+    margin: 0 auto;
+  }
+  .slider_area .single_slider .my_img img {
+    display: block;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .slider_area .single_slider .my_img { width: 260px; }
+}
+
+/* Use a compact side-by-side banner on tablets. */
+@media (min-width: 768px) and (max-width: 991px) {
+  .slider_area .single_slider .slider_text { padding: 180px 0; }
+  .slider_area .single_slider .my_img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 220px;
+    max-width: none;
+    margin: 0;
+  }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+ .slider_area .single_slider { height: auto; }
+}
+
+/* Keep project logos inside their responsive columns. */
+.single_gallery .thumb img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
