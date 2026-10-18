@@ -6295,3 +6295,27 @@ h6 {
   max-width: 100%;
   height: auto;
 }
+
+/* Intro link styled to match the site's outlined contact button. */
+.more-about-link {
+  display: inline-block;
+  margin-top: 24px;
+  border: 1px solid #DB9A64;
+  padding: 12px 24px;
+  color: #DB9A64;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.more-about-link:hover,
+.more-about-link:focus-visible {
+  color: #311E25;
+  background: #DB9A64;
+}
+.more-about-link:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+#about-me { scroll-margin-top: 120px; }
+#about-me:focus { outline: none; }
+
+.homepage-image-gallery[hidden] { display: none !important; }
