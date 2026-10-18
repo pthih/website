@@ -19,8 +19,8 @@
 .intro-down-link:hover { color: var(--preview-ice); }
 .intro-down-link:focus-visible { outline-color: var(--preview-sea-glass); }
 .slicknav_menu .slicknav_icon-bar { background: var(--preview-ice); }
-.slicknav_nav { background: var(--preview-teal); }
-.slicknav_nav a { color: var(--preview-ice); }
+.slicknav_menu .slicknav_nav { background: var(--preview-teal); }
+.slicknav_menu .slicknav_nav a { color: var(--preview-ice); }
 
 .footer { background-image: none; background-color: var(--preview-teal); }
 .footer .copy-right_text .copy_right { color: var(--preview-ice); }
@@ -111,3 +111,7 @@
   .slider_area .single_slider .my_img { width: 220px; max-width: 70%; }
 }
 .slider_area .single_slider .my_img img { height: auto; }
+
+.slicknav_menu .slicknav_nav a:hover,
+.slicknav_menu .slicknav_nav a:focus-visible,
+.slicknav_menu .slicknav_nav a.active { color: var(--preview-sea-glass); background: var(--preview-teal); }
