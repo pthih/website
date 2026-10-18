@@ -48,6 +48,18 @@
       }
 
       .single_gallery { margin-bottom: 32px; }
+
+      .burma-logo-stage { display: block; position: relative; background: white; }
+      .single_gallery .thumb .burma-original { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 220ms ease; background: white; }
+      .burma-logo-stage.show-original .burma-original { opacity: 1; }
+      .logo-switch { display: flex; gap: 8px; margin: 12px 0 16px; flex-wrap: wrap; }
+      .logo-switch[hidden] { display: none; }
+      .logo-switch button { border: 1px solid #b88755; border-radius: 6px; background: white; color: #845022; font: inherit; font-size: 13px; padding: 6px 10px; cursor: pointer; }
+      .logo-switch button[aria-pressed="true"] { background: #845022; color: white; }
+      .logo-switch button:hover { background: #f4ece4; color: #311e25; }
+      .logo-switch button:focus-visible { outline: 2px solid #845022; outline-offset: 3px; }
+      @media (prefers-reduced-motion: reduce) { .single_gallery .thumb .burma-original { transition: none; } }
+
       .portfolio-divider { border-top: 4px solid #e4ddd7; }
       .page-loader {
         position: fixed;
@@ -72,6 +84,7 @@
       }
     </style>
 
+    <link rel="stylesheet" href="css/palette-preview.css">
 </head>
 
 <body>
@@ -94,7 +107,7 @@
                             <div class="col-xl-3 col-lg-2">
                                 <div class="logo">
                                     <a href="index.html">
-                                        <img src="img/logo.png" alt="">
+                                        <img class="sea-glass-header-logo" src="img/sea-glass-logo.png" alt="Phyo Thiha">
                                     </a>
                                 </div>
                             </div>
@@ -104,6 +117,7 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
+
                                             <li><a href="https://www.linkedin.com/in/phyo-thiha-53997653/">Linkedin</a></li>
                                             <li><a href="https://trailblazer.me/id/pthiha">Salesforce</a></li>
                                         </ul>
@@ -143,7 +157,7 @@
                         </div>
                     </div>
                     <div class="my_img">
-                        <img src="img/about/my_img.png" alt="">
+                        <img src="img/about/portrait-new.png" alt="Phyo Thiha" width="1272" height="1872">
                     </div>
                 </div>
             </div>
@@ -182,19 +196,27 @@
 
 	<!-- Start Sample Area -->
 
-		<div class="container box_1170">
-			
+		<div class="portfolio-section">
+            <h3 class="text-heading portfolio-heading">A few things I've done.</h3>
+
 
 
 
             <div class="row justify-content-center">
                 <div class="col-xl-10 col-lg-10">
-                    <h3 class="text-heading">A Few Things I've Done</h3>
+
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-6">
                             <div class="single_gallery">
                                 <div class="thumb">
-                                    <a href="https://web.archive.org/web/20180308060430/http://tasteofburma.com/"><img src="img/gallery/1.png" alt="A Taste of Burma"></a>
+                                    <a class="burma-logo-stage" href="https://web.archive.org/web/20180308060430/http://tasteofburma.com/" aria-label="View archived A Taste of Burma website">
+                                        <img src="img/gallery/1.png" alt="A Taste of Burma revised logo" width="441" height="390">
+                                        <img class="burma-original" src="img/gallery/taste-of-burma-original-cropped.png" alt="A Taste of Burma original logo" width="441" height="390" aria-hidden="true">
+                                    </a>
+                                    <div class="logo-switch" role="group" aria-label="A Taste of Burma logo version" hidden>
+                                        <button type="button" data-version="revised" aria-pressed="true">Revised logo</button>
+                                        <button type="button" data-version="original" aria-pressed="false">Original logo</button>
+                                    </div>
                                 </div>
                                 <div class="gallery_heading">
                                     <span>Logo &amp; Website Design</span>
@@ -412,6 +434,51 @@
     <script src="js/fit-intro.js"></script>
     <script src="js/about-scroll.js"></script>
     <script src="js/intro-arrow.js"></script>
+
+<script>
+(function () {
+  var stage = document.querySelector('.burma-logo-stage');
+  var controls = document.querySelector('.logo-switch');
+  var selected = 'revised';
+  function show(version) {
+    stage.classList.toggle('show-original', version === 'original');
+    var images = stage.querySelectorAll('img');
+    images[0].setAttribute('aria-hidden', String(version === 'original'));
+    images[1].setAttribute('aria-hidden', String(version !== 'original'));
+  }
+  controls.hidden = false;
+  controls.querySelectorAll('button').forEach(function (button) {
+    button.addEventListener('pointerenter', function (event) { if (event.pointerType === 'mouse') show(button.dataset.version); });
+    button.addEventListener('pointerleave', function () { show(selected); });
+    button.addEventListener('focus', function () { show(button.dataset.version); });
+    button.addEventListener('blur', function () { show(selected); });
+    button.addEventListener('click', function () {
+      selected = button.dataset.version;
+      controls.querySelectorAll('button').forEach(function (item) { item.setAttribute('aria-pressed', String(item === button)); });
+      show(selected);
+    });
+  });
+})();
+</script>
+
+
+<script>
+(function () {
+  var logo = document.querySelector('.sea-glass-header-logo');
+  var contact = document.querySelector('.Appointment .book_btn a');
+  if (!logo || !contact) return;
+  function matchHeight() {
+    var height = contact.getBoundingClientRect().height;
+    logo.style.height = (height > 0 ? height : 48) + 'px';
+  }
+  matchHeight();
+  if (window.ResizeObserver) new ResizeObserver(matchHeight).observe(contact);
+  window.addEventListener('resize', matchHeight);
+  window.addEventListener('load', matchHeight, { once: true });
+  if (document.fonts) document.fonts.ready.then(matchHeight);
+})();
+</script>
+
 </body>
 
 </html>
