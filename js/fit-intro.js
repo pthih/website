@@ -8,7 +8,7 @@
   function fit() {
     var bounds = heading.getBoundingClientRect();
     var available = bounds.width;
-    if (portrait && portrait.getClientRects().length) {
+    if (window.matchMedia("(min-width: 768px)").matches && portrait && portrait.getClientRects().length) {
       var image = portrait.getBoundingClientRect();
       available = Math.min(available, image.left - bounds.left - 24);
     }
