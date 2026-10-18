@@ -6209,3 +6209,29 @@ h6 {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+/* Keep the personal introduction on two compact lines. */
+.slider_area .single_slider .slider_text h3.personal-intro {
+  font-size: 48px;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+.slider_area .single_slider .slider_text h3.personal-intro span {
+  font-size: 36px;
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .slider_area .single_slider .slider_text h3.personal-intro {
+    font-size: 38px;
+  }
+  .slider_area .single_slider .slider_text h3.personal-intro span {
+    font-size: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .slider_area .single_slider .slider_text h3.personal-intro {
+    font-size: clamp(16px, 5vw, 30px);
+  }
+  .slider_area .single_slider .slider_text h3.personal-intro span {
+    font-size: clamp(14px, 4.3vw, 26px);
+  }
+}
