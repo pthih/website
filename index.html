@@ -27,9 +27,39 @@
 
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+
+    <style>
+      .page-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 10000;
+        display: grid;
+        place-items: center;
+        box-sizing: border-box;
+        padding-bottom: calc(30vh + 120px);
+        background: #fff;
+        opacity: 1;
+        transition: opacity 350ms ease;
+      }
+      .page-loader[hidden] { display: none; }
+      .page-loader.is-finished { opacity: 0; pointer-events: none; }
+      .page-loader img { width: 67px; height: 67px; max-width: 55vw; object-fit: contain; }
+      .page-loader-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+      @media (prefers-reduced-motion: reduce) {
+        .page-loader { transition: none; }
+        .page-loader img { display: none; }
+        .page-loader-label { position: static; width: auto; height: auto; clip-path: none; color: #311E25; }
+      }
+    </style>
+
 </head>
 
 <body>
+    <div id="page-loader" class="page-loader" role="status" hidden>
+      <img src="img/page-loader.gif" alt="" width="200" height="200">
+      <span class="page-loader-label">Loading…</span>
+    </div>
+    <script src="js/page-loader.js"></script>
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
