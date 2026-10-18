@@ -6308,7 +6308,7 @@ h6 {
 }
 .more-about-link:hover,
 .more-about-link:focus-visible {
-  color: #311E25;
+  color: #fff;
   background: #DB9A64;
 }
 .more-about-link:focus-visible {
@@ -6323,7 +6323,7 @@ h6 {
 /* Match the rounded outlines of the two primary links. */
 .more-about-link,
 .header-area .main-header-area .Appointment .book_btn a {
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 /* Match the reference outline thickness. */
@@ -6347,3 +6347,9 @@ h6 {
   90% { transform: translateY(-4px); }
 }
 @media (prefers-reduced-motion: reduce) { .intro-down-link.cue-ready .intro-down-icon { animation: none; } }
+
+/* Match the contact link's typography. */
+.more-about-link {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+}
