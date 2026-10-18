@@ -6231,3 +6231,125 @@ h6 {
     font-size: 26px;
   }
 }
+
+/* Portrait clearance below the laptop navigation. */
+@media (min-width: 992px) and (max-width: 1200px) {
+  .slider_area .single_slider .my_img {
+    width: 245px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .slider_area .single_slider .my_img { width: 300px; }
+}
+
+/* Shorten the desktop banner to bring the portrait closer to navigation. */
+@media (min-width: 1201px) {
+  .slider_area .single_slider .slider_text { padding: 180px 0; }
+}
+
+/* Show the portrait below the introduction on phones and tablets. */
+@media (max-width: 991px) {
+  .slider_area .single_slider .slider_text {
+    padding: 130px 0 24px;
+  }
+  .slider_area .single_slider .slider_text h3.personal-intro {
+    margin-bottom: 0;
+  }
+  .slider_area .single_slider .my_img {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 220px;
+    max-width: 70%;
+    margin: 0 auto;
+  }
+  .slider_area .single_slider .my_img img {
+    display: block;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .slider_area .single_slider .my_img { width: 260px; }
+}
+
+/* Use a compact side-by-side banner on tablets. */
+@media (min-width: 768px) and (max-width: 991px) {
+  .slider_area .single_slider .slider_text { padding: 180px 0; }
+  .slider_area .single_slider .my_img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 220px;
+    max-width: none;
+    margin: 0;
+  }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+ .slider_area .single_slider { height: auto; }
+}
+
+/* Keep project logos inside their responsive columns. */
+.single_gallery .thumb img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Intro link styled to match the site's outlined contact button. */
+.more-about-link {
+  display: inline-block;
+  margin-top: 24px;
+  border: 1px solid #DB9A64;
+  padding: 12px 24px;
+  color: #DB9A64;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.more-about-link:hover,
+.more-about-link:focus-visible {
+  color: #fff;
+  background: #DB9A64;
+}
+.more-about-link:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+#about-me { scroll-margin-top: 120px; }
+#about-me:focus { outline: none; }
+
+.homepage-image-gallery[hidden] { display: none !important; }
+
+/* Match the rounded outlines of the two primary links. */
+.more-about-link,
+.header-area .main-header-area .Appointment .book_btn a {
+  border-radius: 8px;
+}
+
+/* Match the reference outline thickness. */
+.more-about-link,
+.header-area .main-header-area .Appointment .book_btn a {
+  border-width: 2px;
+}
+
+/* Leave a clear area for the once-bouncing About arrow. */
+.slider_area .single_slider { position: relative; padding-bottom: 56px; }
+.intro-scroll-cue { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); }
+.intro-down-link { display: grid; place-items: center; width: 44px; height: 44px; color: #DB9A64; border-radius: 6px; }
+.intro-down-link:hover { color: #fff; }
+.intro-down-link:focus-visible { outline: 2px solid #DB9A64; outline-offset: 2px; }
+.intro-down-icon { display: block; }
+.intro-down-link.cue-ready .intro-down-icon { animation: intro-cue-bounce 1s 0.8s both; }
+@keyframes intro-cue-bounce {
+  0%, 20%, 53%, 80%, 100% { transform: translateY(0); animation-timing-function: cubic-bezier(.215,.61,.355,1); }
+  40%, 43% { transform: translateY(-30px); animation-timing-function: cubic-bezier(.755,.05,.855,.06); }
+  70% { transform: translateY(-15px); animation-timing-function: cubic-bezier(.755,.05,.855,.06); }
+  90% { transform: translateY(-4px); }
+}
+@media (prefers-reduced-motion: reduce) { .intro-down-link.cue-ready .intro-down-icon { animation: none; } }
+
+/* Match the contact link's typography. */
+.more-about-link {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+}

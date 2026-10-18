@@ -27,9 +27,39 @@
 
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+
+    <style>
+      .page-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 10000;
+        display: grid;
+        place-items: center;
+        box-sizing: border-box;
+        padding-bottom: calc(30vh + 120px);
+        background: #fff;
+        opacity: 1;
+        transition: opacity 500ms ease;
+      }
+      .page-loader[hidden] { display: none; }
+      .page-loader.is-finished { opacity: 0; pointer-events: none; }
+      .page-loader img { width: 67px; height: 67px; max-width: 55vw; object-fit: contain; }
+      .page-loader-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+      @media (prefers-reduced-motion: reduce) {
+        .page-loader { transition: none; }
+        .page-loader img { display: none; }
+        .page-loader-label { position: static; width: auto; height: auto; clip-path: none; color: #311E25; }
+      }
+    </style>
+
 </head>
 
 <body>
+    <div id="page-loader" class="page-loader" role="status" hidden>
+      <img src="img/page-loader.gif" alt="" width="200" height="200">
+      <span class="page-loader-label">Loading…</span>
+    </div>
+    <script src="js/page-loader.js"></script>
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
@@ -57,7 +87,6 @@
                                             <li><a href="index.html">home</a></li>
                                             <li><a href="https://www.linkedin.com/in/phyo-thiha-53997653/">Linkedin</a></li>
                                             <li><a href="https://trailblazer.me/id/pthiha">Salesforce</a></li>
-                                            <li><a href="https://vimeo.com/user13310917">Vimeo</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -90,13 +119,22 @@
                         <div class="slider_text">
                             <h3 class="personal-intro"><span class="intro-greeting">Hi, I am Phyo Thiha.</span>
                                 <span class="intro-location">Conroe &amp; Greater Houston, TX</span></h3>
+                            <a class="more-about-link" href="#about-me">More about me</a>
 
                         </div>
                     </div>
-                    <div class="my_img d-none d-lg-block">
+                    <div class="my_img">
                         <img src="img/about/my_img.png" alt="">
                     </div>
                 </div>
+            </div>
+
+            <div class="intro-scroll-cue">
+                <a class="intro-down-link" href="#about-me" aria-label="Scroll to About me">
+                    <svg class="intro-down-icon" width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                        <path d="M7 12L16 21L25 12" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </div>
@@ -105,7 +143,7 @@
 	<!-- Start Sample Area -->
 	<section class="sample-text-area">
 		<div class="container box_1170">
-			<h3 class="text-heading">A little about me.</h3>
+			<h3 class="text-heading" id="about-me" tabindex="-1">A little about me.</h3>
 			<p class="sample-text">
 			I work in installations at Poolsure. I enjoy understanding how things work, finding ways to make everyday tasks easier, and creating clean, simple designs. My background includes customer service, dispatch, IT support, and graphic design.
 			<br>
@@ -183,7 +221,8 @@
 <br>
 
 
-		<div class="container box_1170">
+		<!-- Temporarily hidden; retain gallery content for restoration. -->
+		<div class="container box_1170 homepage-image-gallery" hidden>
 			<div class="section-top-border">
 				<h3><a href="gallery-2.html">Image Gallery > View More</a></h3>
 				<div class="row gallery-item">
@@ -253,7 +292,6 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <p class="copy_right text-center">
-<img src="img/made-in-texas-2.png" alt="">
                         </p>
                     </div>
                 </div>
@@ -311,6 +349,8 @@
 
     <script src="js/main.js"></script>
     <script src="js/fit-intro.js"></script>
+    <script src="js/about-scroll.js"></script>
+    <script src="js/intro-arrow.js"></script>
 </body>
 
 </html>
