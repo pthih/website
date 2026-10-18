@@ -25,7 +25,7 @@
     stop();
     running = true;
     var startY = window.scrollY;
-    var duration = Math.max(900, Math.min(Math.abs(destination() - startY) * 1.15, 1200));
+    var duration = Math.max(1600, Math.min(Math.abs(destination() - startY) * 1.8, 2100));
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       window.scrollTo(0, destination());
       frame = requestAnimationFrame(finish);
@@ -35,12 +35,34 @@
     function animate(now) {
       if (!running) return;
       if (startTime === undefined) startTime = now;
-      var progress = Math.min(1, (now - startTime) / duration);
-      // Ease in gently, accelerate through the middle, then settle softly.
-      var eased = progress < 0.5
-        ? 8 * Math.pow(progress, 4)
-        : 1 - Math.pow(-2 * progress + 2, 4) / 2;
-      window.scrollTo(0, startY + (destination() - startY) * eased);
+      var elapsed = now - startTime;
+      var resistanceTime = 320;
+      var progress = Math.min(1, Math.max(0, (elapsed - resistanceTime) / duration));
+      // Slow drag, a late pickup, then a smooth arrival: cubic-bezier(.76,.03,.35,1).
+      var low = 0;
+      var high = 1;
+      var t = progress;
+      for (var i = 0; i < 16; i++) {
+        t = (low + high) / 2;
+        var x = 3 * (1 - t) * (1 - t) * t * 0.76
+          + 3 * (1 - t) * t * t * 0.35 + t * t * t;
+        if (x < progress) low = t;
+        else high = t;
+      }
+      var eased = progress === 0 ? 0 : progress === 1 ? 1
+        : 3 * (1 - t) * (1 - t) * t * 0.03
+          + 3 * (1 - t) * t * t + t * t * t;
+      // A small, resisted pull settles before the main motion releases.
+      // Keep the existing pickup and landing curve after this short opening phase.
+      var pullFraction = 0.012;
+      var travel;
+      if (elapsed < resistanceTime) {
+        var pullProgress = elapsed / resistanceTime;
+        travel = pullFraction * (1 - Math.pow(1 - pullProgress, 3));
+      } else {
+        travel = pullFraction + (1 - pullFraction) * eased;
+      }
+      window.scrollTo(0, startY + (destination() - startY) * travel);
       if (progress < 1) frame = requestAnimationFrame(animate);
       else frame = requestAnimationFrame(finish);
     }
