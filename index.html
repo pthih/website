@@ -29,6 +29,24 @@
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 
     <style>
+
+      .about-introduction { border-left: 3px solid #b88755; padding-left: 24px; max-width: 760px; }
+      .about-introduction .about-lead { color: #311e25; font-size: 26px; line-height: 1.4; margin: 0 0 14px; }
+      .about-introduction .about-approach { font-size: 18px; line-height: 1.8; margin: 0; color: #626262; }
+      .about-background { margin: 28px 0 20px; font-size: 15px; line-height: 1.9; color: #626262; }
+      .about-background-label { display: block; color: #311e25; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 5px; }
+      .about-background span[aria-hidden] { padding: 0 6px; }
+      .about-contact { font-size: 16px; margin: 0 0 22px; }
+      .about-contact a { color: #845022; text-decoration: underline; text-underline-offset: 4px; }
+      .about-contact a:hover { color: #311e25; }
+      .about-contact a:focus-visible { outline: 2px solid #845022; outline-offset: 4px; }
+      .about-disclaimer { max-width: 700px; font-size: 13px; line-height: 1.7; color: #737373; margin: 0; }
+      @media (max-width: 575px) {
+        .about-introduction { padding-left: 18px; }
+        .about-introduction .about-lead { font-size: 22px; }
+        .about-introduction .about-approach { font-size: 16px; }
+      }
+
       .portfolio-divider { border-top: 4px solid #e4ddd7; }
       .page-loader {
         position: fixed;
@@ -145,15 +163,13 @@
 	<section class="sample-text-area">
 		<div class="container box_1170">
 			<h3 class="text-heading" id="about-me" tabindex="-1">A little about me.</h3>
-			<p class="sample-text">
-			I work in installations at Poolsure. I enjoy understanding how things work, finding ways to make everyday tasks easier, and creating clean, simple designs. My background includes customer service, dispatch, IT support, and graphic design.
-			<br>
-			<br>
-			Any views or opinions expressed on this site are my own and are not necessarily shared by my employer.
-			<br>
-			<br>
-			Contact me: phyo@phyothiha.com
-			</p>
+            <div class="about-introduction">
+                <p class="about-lead">I work in installations at Poolsure.</p>
+                <p class="about-approach">I enjoy understanding how things work, finding ways to make everyday tasks easier, and creating clean, simple designs.</p>
+            </div>
+            <p class="about-background"><span class="about-background-label">My background</span>Customer service <span aria-hidden="true">·</span> Dispatch <span aria-hidden="true">·</span> IT support <span aria-hidden="true">·</span> Graphic design</p>
+            <p class="about-contact">Contact me: <a href="mailto:phyo@phyothiha.com">phyo@phyothiha.com</a></p>
+            <p class="about-disclaimer">Any views or opinions expressed on this site are my own and are not necessarily shared by my employer.</p>
 		</div>
 	</section>
 	<!-- End Sample Area -->
