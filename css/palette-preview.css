@@ -1,0 +1,113 @@
+/* Local color exploration only. */
+:root { --preview-teal: #173c40; --preview-ice: #f1f7f6; --preview-sea-glass: #9dd7c8; }
+.slider_area .single_slider.slider_bg_1 { background-image: none; background-color: var(--preview-teal); }
+.header-area .main-header-area.sticky { background: var(--preview-teal); }
+.slider_area .single_slider .slider_text h3.personal-intro,
+.slider_area .single_slider .slider_text h3.personal-intro > span { color: var(--preview-ice); }
+.slider_area .single_slider .slider_text h3.personal-intro .intro-location { color: var(--preview-sea-glass); }
+.header-area .main-header-area .main-menu ul li a { color: var(--preview-ice); }
+.header-area .main-header-area .main-menu ul li a:hover,
+.header-area .main-header-area .main-menu ul li a.active { color: var(--preview-sea-glass); }
+.header-area .main-header-area .main-menu ul li a::before { background: var(--preview-sea-glass); }
+.more-about-link,
+.header-area .main-header-area .Appointment .book_btn a { color: var(--preview-sea-glass); border-color: var(--preview-sea-glass); }
+.more-about-link:hover,
+.more-about-link:focus-visible,
+.header-area .main-header-area .Appointment .book_btn a:hover,
+.header-area .main-header-area .Appointment .book_btn a:focus-visible { color: var(--preview-teal); background: var(--preview-sea-glass); }
+.intro-down-link { color: var(--preview-sea-glass); }
+.intro-down-link:hover { color: var(--preview-ice); }
+.intro-down-link:focus-visible { outline-color: var(--preview-sea-glass); }
+.slicknav_menu .slicknav_icon-bar { background: var(--preview-ice); }
+.slicknav_nav { background: var(--preview-teal); }
+.slicknav_nav a { color: var(--preview-ice); }
+
+.footer { background-image: none; background-color: var(--preview-teal); }
+.footer .copy-right_text .copy_right { color: var(--preview-ice); }
+.footer .copy-right_text .copy_right a { color: var(--preview-sea-glass); }
+.footer .copy-right_text .copy_right a:hover { color: var(--preview-ice); }
+
+/* Keep About below the opening viewport; allow extra height when content needs it. */
+.slider_area .single_slider {
+  box-sizing: border-box;
+  height: auto;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+/* Anchor the cutout portrait to the opening section rather than its text height. */
+.slider_area .single_slider { padding-bottom: 0; }
+.slider_area .single_slider > .container { min-height: inherit; }
+.slider_area .single_slider > .container > .row { min-height: inherit; }
+.slider_area .single_slider .my_img { bottom: 0; }
+.slider_area .single_slider .my_img img { display: block; }
+@media (max-width: 767px) {
+  .slider_area .single_slider > .container > .row {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch !important;
+  }
+  .slider_area .single_slider .my_img { margin: auto auto 0; }
+  .intro-scroll-cue { left: 24px; transform: none; }
+}
+
+/* Keep the new logo proportional and match the contact button height. */
+.header-area .main-header-area .logo img.sea-glass-header-logo {
+  display: block;
+  width: auto;
+  height: 48px;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* Carry Sea Glass into the About and portfolio accents. */
+.about-introduction { border-left-color: var(--preview-sea-glass); }
+.about-contact a,
+.about-contact a:hover,
+.single_gallery .archive-link,
+.single_gallery .archive-link:hover { color: var(--preview-sea-glass); }
+.about-contact a:focus-visible,
+.single_gallery .archive-link:focus-visible { outline-color: var(--preview-teal); }
+.logo-switch button { border-color: var(--preview-sea-glass); color: var(--preview-teal); background: #fff; }
+.logo-switch button[aria-pressed="true"],
+.logo-switch button:hover { background: var(--preview-sea-glass); color: var(--preview-teal); }
+.logo-switch button:focus-visible { outline-color: var(--preview-teal); }
+
+/* Use the darker palette color against white for clear contrast. */
+.about-introduction { border-left-color: var(--preview-teal); }
+.about-contact a,
+.about-contact a:hover,
+.single_gallery .gallery_heading a,
+.single_gallery .gallery_heading h4,
+.single_gallery .archive-link,
+.single_gallery .archive-link:hover { color: var(--preview-teal); }
+.logo-switch button { border-color: var(--preview-teal); color: var(--preview-teal); background: #fff; }
+.logo-switch button[aria-pressed="true"],
+.logo-switch button:hover { background: var(--preview-teal); color: var(--preview-ice); }
+
+#about-me,
+.single_gallery .gallery_heading h4 { color: var(--preview-teal); }
+
+.portfolio-divider { border-top-color: var(--preview-teal); }
+.portfolio-heading { color: var(--preview-teal); }
+
+/* Trial portrait: enlarge on wide screens while reserving room for the introduction. */
+@media (min-width: 992px) {
+  .slider_area .single_slider .my_img {
+    width: min(40vw, 480px, calc((100svh - 150px) * 0.6795));
+    max-width: 42%;
+  }
+  .slider_area .single_slider > .container > .row > .col-lg-9 {
+    flex: 0 0 61%;
+    max-width: 61%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .slider_area .single_slider .my_img { width: 32%; max-width: 260px; }
+  .slider_area .single_slider > .container > .row > .col-lg-9 { flex: 0 0 66%; max-width: 66%; }
+}
+@media (max-width: 767px) {
+  .slider_area .single_slider .my_img { width: 220px; max-width: 70%; }
+}
+.slider_area .single_slider .my_img img { height: auto; }

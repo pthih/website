@@ -12,7 +12,7 @@
     setTimeout(function () { loader.hidden = true; }, reducedMotion ? 0 : 500);
   }
   function ready() {
-    setTimeout(dismiss, 100);
+    setTimeout(dismiss, 500);
   }
   if (document.readyState === "complete") ready();
   else window.addEventListener("load", ready, { once: true });

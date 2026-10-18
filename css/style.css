@@ -6353,3 +6353,23 @@ h6 {
   font-family: "Roboto", sans-serif;
   font-weight: 600;
 }
+
+/* Portfolio context and explicit links to historical websites. */
+.single_gallery .work-description {
+  margin: 12px 0;
+  max-width: 42ch;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #626262;
+}
+.single_gallery .archive-link {
+  display: inline-block;
+  padding: 4px 0;
+  color: #845022;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.single_gallery .archive-link:hover { color: #311E25; }
+.single_gallery .archive-link:focus-visible { outline: 2px solid #845022; outline-offset: 4px; }

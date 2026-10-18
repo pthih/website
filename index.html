@@ -29,6 +29,38 @@
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 
     <style>
+
+      .about-introduction { border-left: 3px solid #b88755; padding-left: 24px; max-width: 760px; }
+      .about-introduction .about-lead { color: #311e25; font-size: 26px; line-height: 1.4; margin: 0 0 14px; }
+      .about-introduction .about-approach { font-size: 18px; line-height: 1.8; margin: 0; color: #626262; }
+      .about-background { margin: 28px 0 20px; font-size: 15px; line-height: 1.9; color: #626262; }
+      .about-background-label { display: block; color: #311e25; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 5px; }
+      .about-background span[aria-hidden] { padding: 0 6px; }
+      .about-contact { font-size: 16px; margin: 0 0 22px; }
+      .about-contact a { color: #845022; text-decoration: underline; text-underline-offset: 4px; }
+      .about-contact a:hover { color: #311e25; }
+      .about-contact a:focus-visible { outline: 2px solid #845022; outline-offset: 4px; }
+      .about-disclaimer { max-width: 700px; font-size: 13px; line-height: 1.7; color: #737373; margin: 0; }
+      @media (max-width: 575px) {
+        .about-introduction { padding-left: 18px; }
+        .about-introduction .about-lead { font-size: 22px; }
+        .about-introduction .about-approach { font-size: 16px; }
+      }
+
+      .single_gallery { margin-bottom: 32px; }
+
+      .burma-logo-stage { display: block; position: relative; background: white; }
+      .single_gallery .thumb .burma-original { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 220ms ease; background: white; }
+      .burma-logo-stage.show-original .burma-original { opacity: 1; }
+      .logo-switch { display: flex; gap: 8px; margin: 12px 0 16px; flex-wrap: wrap; }
+      .logo-switch[hidden] { display: none; }
+      .logo-switch button { border: 1px solid #b88755; border-radius: 6px; background: white; color: #845022; font: inherit; font-size: 13px; padding: 6px 10px; cursor: pointer; }
+      .logo-switch button[aria-pressed="true"] { background: #845022; color: white; }
+      .logo-switch button:hover { background: #f4ece4; color: #311e25; }
+      .logo-switch button:focus-visible { outline: 2px solid #845022; outline-offset: 3px; }
+      @media (prefers-reduced-motion: reduce) { .single_gallery .thumb .burma-original { transition: none; } }
+
+      .portfolio-divider { border-top: 4px solid #e4ddd7; }
       .page-loader {
         position: fixed;
         inset: 0;
@@ -52,6 +84,7 @@
       }
     </style>
 
+    <link rel="stylesheet" href="css/palette-preview.css">
 </head>
 
 <body>
@@ -74,7 +107,7 @@
                             <div class="col-xl-3 col-lg-2">
                                 <div class="logo">
                                     <a href="index.html">
-                                        <img src="img/logo.png" alt="">
+                                        <img class="sea-glass-header-logo" src="img/sea-glass-logo.png" alt="Phyo Thiha">
                                     </a>
                                 </div>
                             </div>
@@ -84,7 +117,7 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a href="index.html">home</a></li>
+
                                             <li><a href="https://www.linkedin.com/in/phyo-thiha-53997653/">Linkedin</a></li>
                                             <li><a href="https://trailblazer.me/id/pthiha">Salesforce</a></li>
                                         </ul>
@@ -124,7 +157,7 @@
                         </div>
                     </div>
                     <div class="my_img">
-                        <img src="img/about/my_img.png" alt="">
+                        <img src="img/about/portrait-new.png" alt="Phyo Thiha" width="1272" height="1872">
                     </div>
                 </div>
             </div>
@@ -144,43 +177,52 @@
 	<section class="sample-text-area">
 		<div class="container box_1170">
 			<h3 class="text-heading" id="about-me" tabindex="-1">A little about me.</h3>
-			<p class="sample-text">
-			I work in installations at Poolsure. I enjoy understanding how things work, finding ways to make everyday tasks easier, and creating clean, simple designs. My background includes customer service, dispatch, IT support, and graphic design.
-			<br>
-			<br>
-			Any views or opinions expressed on this site are my own and are not necessarily shared by my employer.
-			<br>
-			<br>
-			Contact me: phyo@phyothiha.com
-			</p>
+            <div class="about-introduction">
+                <p class="about-lead">I work in installations at Poolsure.</p>
+                <p class="about-approach">I enjoy understanding how things work, finding ways to make everyday tasks easier, and creating clean, simple designs.</p>
+            </div>
+            <p class="about-background"><span class="about-background-label">My background</span>Customer service <span aria-hidden="true">·</span> Dispatch <span aria-hidden="true">·</span> IT support <span aria-hidden="true">·</span> Graphic design</p>
+            <p class="about-contact">Contact me: <a href="mailto:phyo@phyothiha.com">phyo@phyothiha.com</a></p>
+            <p class="about-disclaimer">Any views or opinions expressed on this site are my own and are not necessarily shared by my employer.</p>
 		</div>
 	</section>
 	<!-- End Sample Area -->
 
 
 		<div class="container box_1170">
-			<div class="section-top-border">
+			<div class="section-top-border portfolio-divider" role="separator">
 		</div>
 
 
 	<!-- Start Sample Area -->
 
-		<div class="container box_1170">
-			<h3 class="text-heading">A Few Things I've Done</h3>
+		<div class="portfolio-section">
+            <h3 class="text-heading portfolio-heading">A few things I've done.</h3>
+
 
 
 
             <div class="row justify-content-center">
                 <div class="col-xl-10 col-lg-10">
+
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-6">
                             <div class="single_gallery">
                                 <div class="thumb">
-                                    <img src="img/gallery/1.png" alt="">
+                                    <a class="burma-logo-stage" href="https://web.archive.org/web/20180308060430/http://tasteofburma.com/" aria-label="View archived A Taste of Burma website">
+                                        <img src="img/gallery/1.png" alt="A Taste of Burma revised logo" width="441" height="390">
+                                        <img class="burma-original" src="img/gallery/taste-of-burma-original-cropped.png" alt="A Taste of Burma original logo" width="441" height="390" aria-hidden="true">
+                                    </a>
+                                    <div class="logo-switch" role="group" aria-label="A Taste of Burma logo version" hidden>
+                                        <button type="button" data-version="revised" aria-pressed="true">Revised logo</button>
+                                        <button type="button" data-version="original" aria-pressed="false">Original logo</button>
+                                    </div>
                                 </div>
                                 <div class="gallery_heading">
-                                    <span>Logo Design</span>
-                                    <a href="#"><h4>A Taste of Burma Project</h4></a>
+                                    <span>Logo &amp; Website Design</span>
+                                    <a href="https://web.archive.org/web/20180308060430/http://tasteofburma.com/"><h4>A Taste of Burma</h4></a>
+                                  <p class="work-description">I designed the logo and website for A Taste of Burma. This business is no longer active.</p>
+                                  <a class="archive-link" href="https://web.archive.org/web/20180308060430/http://tasteofburma.com/">View archived website</a>
                                 </div>
                             </div>
 
@@ -188,14 +230,55 @@
                         <div class="col-xl-6 col-lg-6 col-md-6">
                             <div class="single_gallery">
                                 <div class="thumb">
-                                    <img src="img/gallery/3.png" alt="">
+                                    <a href="https://web.archive.org/web/20180817212827/http://www.shotwellimages.com/"><img src="img/gallery/3.png" alt="Shotwell Images"></a>
                                 </div>
                                 <div class="gallery_heading">
-                                  <span>Logo Design</span>
-                                  <a href="#"><h4>Shotwell Images Project</h4></a>
+                                  <span>Logo &amp; Website Design</span>
+                                  <a href="https://web.archive.org/web/20180817212827/http://www.shotwellimages.com/"><h4>Shotwell Images</h4></a>
+                                  <p class="work-description">I designed the logo and website for Shotwell Images. This business is no longer active.</p>
+                                  <a class="archive-link" href="https://web.archive.org/web/20180817212827/http://www.shotwellimages.com/">View archived website</a>
                                 </div>
                             </div>
 
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6">
+                            <div class="single_gallery">
+                                <div class="thumb">
+                                    <a href="https://web.archive.org/web/20120429172142/http://bonsaispasalon.com/"><img src="img/gallery/bonsai-spa-salon.svg" alt="Bonsai Spa and Salon" width="441" height="390"></a>
+                                </div>
+                                <div class="gallery_heading">
+                                    <span>Logo &amp; Website Design</span>
+                                    <a href="https://web.archive.org/web/20120429172142/http://bonsaispasalon.com/"><h4>Bonsai Spa and Salon</h4></a>
+                                    <p class="work-description">I designed the logo and website for Bonsai Spa and Salon.</p>
+                                    <a class="archive-link" href="https://web.archive.org/web/20120429172142/http://bonsaispasalon.com/">View archived website</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6">
+                            <div class="single_gallery">
+                                <div class="thumb">
+                                    <a href="https://web.archive.org/web/20111106043705/http://my999app.com/"><img src="img/gallery/my999app.svg" alt="My999App" width="441" height="390"></a>
+                                </div>
+                                <div class="gallery_heading">
+                                    <span>Logo &amp; Website Design</span>
+                                    <a href="https://web.archive.org/web/20111106043705/http://my999app.com/"><h4>My999App</h4></a>
+                                    <p class="work-description">I designed the logo and website for My999App.</p>
+                                    <a class="archive-link" href="https://web.archive.org/web/20111106043705/http://my999app.com/">View archived website</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6">
+                            <div class="single_gallery">
+                                <div class="thumb">
+                                    <a href="https://www.reddit.com/r/Nationals/s/JF5Ac81IYy"><img src="img/gallery/nationals-wallpaper.svg" alt="Nationals wallpaper with red and navy graphics on a light jersey texture" width="441" height="390" loading="lazy"></a>
+                                </div>
+                                <div class="gallery_heading">
+                                    <span>Wallpaper Design</span>
+                                    <a href="https://www.reddit.com/r/Nationals/s/JF5Ac81IYy"><h4>Nationals Wallpaper</h4></a>
+                                    <p class="work-description">A wallpaper I designed and shared on Reddit for anyone to download for free.</p>
+                                    <a class="archive-link" href="https://www.reddit.com/r/Nationals/s/JF5Ac81IYy">View on Reddit</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -351,6 +434,51 @@
     <script src="js/fit-intro.js"></script>
     <script src="js/about-scroll.js"></script>
     <script src="js/intro-arrow.js"></script>
+
+<script>
+(function () {
+  var stage = document.querySelector('.burma-logo-stage');
+  var controls = document.querySelector('.logo-switch');
+  var selected = 'revised';
+  function show(version) {
+    stage.classList.toggle('show-original', version === 'original');
+    var images = stage.querySelectorAll('img');
+    images[0].setAttribute('aria-hidden', String(version === 'original'));
+    images[1].setAttribute('aria-hidden', String(version !== 'original'));
+  }
+  controls.hidden = false;
+  controls.querySelectorAll('button').forEach(function (button) {
+    button.addEventListener('pointerenter', function (event) { if (event.pointerType === 'mouse') show(button.dataset.version); });
+    button.addEventListener('pointerleave', function () { show(selected); });
+    button.addEventListener('focus', function () { show(button.dataset.version); });
+    button.addEventListener('blur', function () { show(selected); });
+    button.addEventListener('click', function () {
+      selected = button.dataset.version;
+      controls.querySelectorAll('button').forEach(function (item) { item.setAttribute('aria-pressed', String(item === button)); });
+      show(selected);
+    });
+  });
+})();
+</script>
+
+
+<script>
+(function () {
+  var logo = document.querySelector('.sea-glass-header-logo');
+  var contact = document.querySelector('.Appointment .book_btn a');
+  if (!logo || !contact) return;
+  function matchHeight() {
+    var height = contact.getBoundingClientRect().height;
+    logo.style.height = (height > 0 ? height : 48) + 'px';
+  }
+  matchHeight();
+  if (window.ResizeObserver) new ResizeObserver(matchHeight).observe(contact);
+  window.addEventListener('resize', matchHeight);
+  window.addEventListener('load', matchHeight, { once: true });
+  if (document.fonts) document.fonts.ready.then(matchHeight);
+})();
+</script>
+
 </body>
 
 </html>
