@@ -98,12 +98,8 @@ html[data-theme="dark"] .footer-day-clouds { display: none; }
 html[data-theme="light"] .slider_area .single_slider .slider_text h3.personal-intro .intro-location { color: #426e67; }
 
 /*  rotate the blades around their local hub; tower stays still. */
-.turbine-rotor { transform-origin: 0 0; animation: turbine-spin 10s linear infinite; }
-@keyframes turbine-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-@media (prefers-reduced-motion: reduce) { .turbine-rotor { animation: none; } }
 
 /*  allow the raised cloud to extend into the expanded sky. */
 .footer .footer-scene { overflow-x: clip; overflow-y: visible; }
 
 /* Give the smaller turbine its own pace and starting angle. */
-.turbine-rotor-comparison { animation-duration: 13s; animation-delay: -4s; }
