@@ -93,3 +93,6 @@ html[data-theme="dark"] .footer-day-clouds { display: none; }
   .theme-toggle .theme-toggle-label { display: none; }
   .theme-toggle { width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: 50%; }
 }
+
+/* Separate the location from the name in the light intro. */
+html[data-theme="light"] .slider_area .single_slider .slider_text h3.personal-intro .intro-location { color: #426e67; }
