@@ -1,0 +1,89 @@
+/* Light and dark theme styles. */
+.theme-toggle { position: fixed; right: 18px; bottom: 18px; z-index: 900; display: inline-flex; align-items: center; gap: 9px; padding: 10px 14px; border: 1px solid #9dd7c8; border-radius: 24px; background: #173c40; color: #f1f7f6; font: 600 14px Roboto, sans-serif; cursor: pointer; box-shadow: 0 3px 14px #0002; }
+.theme-toggle:focus-visible { outline: 3px solid #9dd7c8; outline-offset: 4px; }
+.footer-day { display: none; }
+html[data-theme="light"] .footer-day { display: inline; }
+html[data-theme="light"] .footer-night { display: none; }
+html[data-theme="light"] .theme-toggle { background: #f1f7f6; color: #173c40; border-color: #173c40; }
+html[data-theme="light"] .slider_area .single_slider.slider_bg_1,
+html[data-theme="light"] .footer,
+html[data-theme="light"] .footer::before,
+html[data-theme="light"] .header-area .main-header-area.sticky,
+html[data-theme="light"] .slicknav_menu .slicknav_nav { background-color: #e7f2ef; }
+html[data-theme="light"] .slider_area .single_slider .slider_text h3.personal-intro,
+html[data-theme="light"] .slider_area .single_slider .slider_text h3.personal-intro > span,
+html[data-theme="light"] .slider_area .single_slider .slider_text h3.personal-intro .intro-location,
+html[data-theme="light"] .header-area .main-header-area .main-menu ul li a,
+html[data-theme="light"] .slicknav_menu .slicknav_nav a,
+html[data-theme="light"] .footer .copy-right_text .copy_right,
+html[data-theme="light"] .footer .copy-right_text .copy_right a,
+html[data-theme="light"] .footer-social-link,
+html[data-theme="light"] .header-social-link,
+html[data-theme="light"] .footer-scene,
+html[data-theme="light"] .intro-down-link { color: #173c40; }
+html[data-theme="light"] .more-about-link,
+html[data-theme="light"] .header-area .main-header-area .Appointment .book_btn a { color: #173c40; border-color: #173c40; }
+html[data-theme="light"] .more-about-link:hover,
+html[data-theme="light"] .header-area .main-header-area .Appointment .book_btn a:hover { color: #f1f7f6; background: #173c40; }
+html[data-theme="light"] .slicknav_menu .slicknav_icon-bar { background: #173c40; }
+/* Temporary recoloring of raster logos; replacement assets can follow later. */
+html[data-theme="light"] .sea-glass-header-logo,
+html[data-theme="light"] .footer .copy-right_text img { filter: brightness(0) saturate(100%) invert(19%) sepia(14%) saturate(1475%) hue-rotate(138deg) brightness(91%) contrast(92%); }
+@media (max-width: 767px) { .theme-toggle { right: 12px; bottom: 12px; padding: 9px 12px; } }
+
+/* Match both sets of social links in each theme. */
+html[data-theme="dark"] .header-area .main-header-area .main-menu ul li a.header-social-link,
+html[data-theme="dark"] .slicknav_menu .slicknav_nav a.header-social-link,
+html[data-theme="dark"] .footer-social-link { color: #9dd7c8; }
+html[data-theme="light"] .header-area .main-header-area .main-menu ul li a.header-social-link,
+html[data-theme="light"] .slicknav_menu .slicknav_nav a.header-social-link,
+html[data-theme="light"] .footer-social-link { color: #173c40; }
+/* Neutral charcoal separates the middle content from the deep teal ends. */
+html[data-theme="dark"] body,
+html[data-theme="dark"] .sample-text-area,
+html[data-theme="dark"] .portfolio-section { background: #292929; color: #d2dfdf; }
+html[data-theme="dark"] #about-me,
+html[data-theme="dark"] .portfolio-heading,
+html[data-theme="dark"] .about-introduction .about-lead,
+html[data-theme="dark"] .about-background-label,
+html[data-theme="dark"] .single_gallery .gallery_heading h4,
+html[data-theme="dark"] .single_gallery .gallery_heading h4 a { color: #f1f7f6; }
+html[data-theme="dark"] .sample-text-area p,
+html[data-theme="dark"] .single_gallery p,
+html[data-theme="dark"] .about-background { color: #c0cecf; }
+html[data-theme="dark"] .about-contact a,
+html[data-theme="dark"] .single_gallery .gallery_heading a,
+html[data-theme="dark"] .single_gallery .archive-link { color: #9dd7c8; }
+html[data-theme="dark"] .about-introduction,
+html[data-theme="dark"] .portfolio-divider { border-color: #9dd7c8; }
+html[data-theme="dark"] .logo-switch button { background: transparent; color: #9dd7c8; border-color: #9dd7c8; }
+html[data-theme="dark"] .logo-switch button[aria-pressed="true"],
+html[data-theme="dark"] .logo-switch button:hover { background: #9dd7c8; color: #173c40; }
+
+/* Opposite-theme controls and a visible light-mode portrait frame. */
+html[data-theme="dark"] .theme-toggle { background: #f1f7f6; color: #173c40; border-color: #f1f7f6; }
+html[data-theme="light"] .theme-toggle { background: #173c40; color: #f1f7f6; border-color: #173c40; }
+html[data-theme="light"] .slider_area .single_slider .my_img img.framed-portrait { box-shadow: 0 0 0 4px #173c40, 0 0 0 5px #173c4030, 0 2px 2px 5px #0001; }
+
+/* Matching softly rounded portrait and project frames. */
+:root { --preview-photo-frame: #fff; }
+html[data-theme="light"] { --preview-photo-frame: #173c40; }
+.slider_area .single_slider .my_img img.framed-portrait,
+html[data-theme="light"] .slider_area .single_slider .my_img img.framed-portrait {
+  border-radius: 10px;
+  box-shadow: 0 0 0 4px var(--preview-photo-frame), 0 0 0 5px rgba(0,0,0,.1), 0 2px 2px 5px rgba(0,0,0,.05);
+}
+.single_gallery .thumb > a {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 0 4px var(--preview-photo-frame), 0 0 0 5px rgba(0,0,0,.1), 0 2px 2px 5px rgba(0,0,0,.05);
+}
+.single_gallery .thumb > a img { border-radius: 10px; }
+
+/* Give project captions breathing room below the image frames. */
+.single_gallery .gallery_heading { padding-top: 22px; }
+
+html[data-theme="dark"] .footer-day-clouds { display: none; }

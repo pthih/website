@@ -211,3 +211,10 @@
   .footer-scene-ground { display: none; }
   .footer-scene::after { content: ""; position: absolute; left: 0; right: 0; top: calc(36px + (min(50cqw, 720px) * 250 / 1200)); height: 1px; background: currentColor; }
 }
+
+/* Preview experiment: extend the teal sky upward without shifting the scene. */
+.footer { position: relative; }
+.footer::before { content: ""; position: absolute; left: 0; right: 0; top: -60px; height: 60px; background: var(--preview-teal); pointer-events: none; }
+
+/* Override Bootstrap’s SVG clipping so raised sky details stay visible. */
+.footer .footer-scene-art { overflow: visible; }
