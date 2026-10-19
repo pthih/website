@@ -204,3 +204,10 @@
   .footer-scene-art { width: 112.5%; max-width: none; margin-left: -6.25%; }
   .footer .footer_top { padding-top: 62px; padding-bottom: 5px; }
 }
+
+/* Keep the desktop baseline full-width, independent of the SVG clipping box. */
+@media (min-width: 768px) {
+  .footer-scene { container-type: inline-size; }
+  .footer-scene-ground { display: none; }
+  .footer-scene::after { content: ""; position: absolute; left: 0; right: 0; top: calc(36px + (min(50cqw, 720px) * 250 / 1200)); height: 1px; background: currentColor; }
+}
