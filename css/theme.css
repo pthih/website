@@ -65,7 +65,7 @@ html[data-theme="dark"] .theme-toggle { background: #f1f7f6; color: #173c40; bor
 html[data-theme="light"] .theme-toggle { background: #173c40; color: #f1f7f6; border-color: #173c40; }
 html[data-theme="light"] .slider_area .single_slider .my_img img.framed-portrait { box-shadow: 0 0 0 4px #173c40, 0 0 0 5px #173c4030, 0 2px 2px 5px #0001; }
 
-/* Matching softly rounded portrait and project frames. */
+/*  matching softly rounded portrait and project frames. */
 :root { --preview-photo-frame: #fff; }
 html[data-theme="light"] { --preview-photo-frame: #173c40; }
 .slider_area .single_slider .my_img img.framed-portrait,
@@ -96,3 +96,14 @@ html[data-theme="dark"] .footer-day-clouds { display: none; }
 
 /* Separate the location from the name in the light intro. */
 html[data-theme="light"] .slider_area .single_slider .slider_text h3.personal-intro .intro-location { color: #426e67; }
+
+/*  rotate the blades around their local hub; tower stays still. */
+.turbine-rotor { transform-origin: 0 0; animation: turbine-spin 10s linear infinite; }
+@keyframes turbine-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .turbine-rotor { animation: none; } }
+
+/*  allow the raised cloud to extend into the expanded sky. */
+.footer .footer-scene { overflow-x: clip; overflow-y: visible; }
+
+/* Give the smaller turbine its own pace and starting angle. */
+.turbine-rotor-comparison { animation-duration: 13s; animation-delay: -4s; }
