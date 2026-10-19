@@ -87,3 +87,9 @@ html[data-theme="light"] .slider_area .single_slider .my_img img.framed-portrait
 .single_gallery .gallery_heading { padding-top: 22px; }
 
 html[data-theme="dark"] .footer-day-clouds { display: none; }
+
+/* Keep the phone toggle compact; retain its accessible name. */
+@media (max-width: 767px) {
+  .theme-toggle .theme-toggle-label { display: none; }
+  .theme-toggle { width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: 50%; }
+}
