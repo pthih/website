@@ -176,3 +176,21 @@
     width: 240px; max-width: 78%; margin: 16px auto 76px;
   }
 }
+
+/* Mobile-only trial: bring the introduction closer to the header. */
+@media (max-width: 767px) {
+  .slider_area .single_slider > .container > .row { justify-content: flex-start; }
+  .slider_area .single_slider .slider_text { padding-top: 80px; }
+}
+
+/* Phone layout: keep the About button below the portrait. */
+@media (max-width: 767px) {
+  .slider_area .single_slider .my_img { margin-bottom: 18px; }
+  .slider_area .single_slider > .container > .row > .more-about-link {
+    align-self: center; margin-top: 0; margin-bottom: 76px;
+  }
+}
+
+@media (max-width: 767px) {
+  .intro-scroll-cue { left: 50%; transform: translateX(-50%); }
+}
