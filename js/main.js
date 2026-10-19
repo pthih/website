@@ -1,15 +1,8 @@
 (function ($) {
 "use strict";
-// TOP Menu Sticky
+// Keep the header at the page top; retain the existing back-to-top control.
 $(window).on('scroll', function () {
-	var scroll = $(window).scrollTop();
-	if (scroll < 400) {
-    $("#sticky-header").removeClass("sticky");
     $('#back-top').fadeIn(500);
-	} else {
-    $("#sticky-header").addClass("sticky");
-    $('#back-top').fadeIn(500);
-	}
 });
 
 

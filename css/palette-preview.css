@@ -149,3 +149,6 @@
   .header-area .main-header-area .main-menu ul.header-socials li a.header-social-link:hover,
   .slicknav_menu .slicknav_nav a.header-social-link:hover { transform: none; }
 }
+
+/* The header scrolls away, so About needs only a small landing margin. */
+#about-me { scroll-margin-top: 20px; }

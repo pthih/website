@@ -10,9 +10,7 @@
     running = false;
   }
   function destination() {
-    var header = document.getElementById("sticky-header");
-    var headerHeight = header ? header.getBoundingClientRect().height : 0;
-    return Math.max(0, target.getBoundingClientRect().top + window.scrollY - headerHeight - 20);
+    return Math.max(0, target.getBoundingClientRect().top + window.scrollY - 20);
   }
   function finish() {
     window.scrollTo(0, destination());
