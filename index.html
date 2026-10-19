@@ -85,9 +85,21 @@
     </style>
 
     <link rel="stylesheet" href="css/palette-preview.css">
+    <script>
+      // Restore the selected theme before the page paints.
+      try { document.documentElement.dataset.theme = localStorage.getItem('phyo-color-theme') || 'dark'; }
+      catch (e) { document.documentElement.dataset.theme = 'dark'; }
+    </script>
+    <link rel="stylesheet" href="css/theme.css">
 </head>
 
 <body>
+    <button class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+        <circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/>
+      </svg>
+      <span class="theme-toggle-label">Switch to Light</span>
+    </button>
     <div id="page-loader" class="page-loader" role="status" hidden>
       <img src="img/loading.gif" alt="" width="150" height="150">
       <span class="page-loader-label">Loading…</span>
@@ -160,6 +172,7 @@
                                 <div class="Appointment">
                                     <div class="book_btn d-none d-lg-block">
                                         <a href="mailto: phyo@phyothiha.com">Let’s Talk</a>
+
                                     </div>
                                 </div>
                             </div>
@@ -394,10 +407,51 @@
         <div class="footer-scene" aria-hidden="true">
           <svg class="footer-scene-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">
             <path class="footer-scene-ground" d="M-2400 250H3600" stroke-width="1.6"/>
+            <!-- Night sky -->
+            <g class="footer-night" transform="translate(-15 -70) translate(769 83) scale(1.2) rotate(-45) translate(-769 -83)">
+              <path d="M782.5 59.62 A27 27 0 1 0 782.5 106.38 Q745 83 782.5 59.62Z"/>
+            </g>
+            <g class="footer-night">
+            <!-- Stars -->
+            <g transform="translate(0 -44.39) scale(1 1.2825)" fill="currentColor" stroke="none" opacity="0.75">
+              <circle cx="194" cy="60" r="1.8"/>
+              <circle cx="247" cy="112" r="1.2"/>
+              <circle cx="369" cy="28" r="1.5"/>
+              <circle cx="429" cy="78" r="1.2"/>
+              <circle cx="487" cy="12" r="1.8"/>
+              <circle cx="615" cy="81" r="1.3"/>
+              <circle cx="673" cy="22" r="1.6"/>
+              <circle cx="708" cy="99" r="1.2"/>
+              <circle cx="817" cy="55" r="1.7"/>
+              <circle cx="880" cy="22" r="1.2"/>
+              <circle cx="957" cy="79" r="1.8"/>
+              <circle cx="1009" cy="34" r="1.3"/>
+            </g>
+            <g transform="translate(0 -44.39) scale(1 1.2825)" stroke-width="1.3" opacity="0.85">
+              <path d="M220 24v8m-4-4h8"/>
+              <path d="M398 113v6m-3-3h6"/>
+              <path d="M641 51v8m-4-4h8"/>
+              <path d="M930 43v8m-4-4h8"/>
+            </g>
+            </g>
+            <g class="footer-day" transform="translate(739 13) scale(1.2)" stroke-width="1.6">
+              <circle r="21"/>
+              <path d="M29.00 0.00L35.00 0.00 M25.11 14.50L30.31 17.50 M14.50 25.11L17.50 30.31 M0.00 29.00L0.00 35.00 M-14.50 25.11L-17.50 30.31 M-25.11 14.50L-30.31 17.50 M-29.00 0.00L-35.00 0.00 M-25.11 -14.50L-30.31 -17.50 M-14.50 -25.11L-17.50 -30.31 M-0.00 -29.00L-0.00 -35.00 M14.50 -25.11L17.50 -30.31 M25.11 -14.50L30.31 -17.50"/>
+            </g>
+            <g class="footer-day-clouds">
             <!-- Simple clouds -->
-            <path d="M268 76h47c15 0 15-15 3-17 0-16-23-23-31-8-8-4-17 0-18 8-14-4-19 17-1 17Z"/>
-            <path d="M543 43h53c17 0 16-17 3-19-2-18-27-24-35-8-9-5-19 0-20 9-16-4-20 18-1 18Z"/>
-            <path d="M857 108h46c15 0 15-15 2-17-1-16-22-21-30-7-8-4-16 0-18 8-13-3-17 16 0 16Z"/>
+            <path transform="translate(28 -57)" d="M268 76h47c15 0 15-15 3-17 0-16-23-23-31-8-8-4-17 0-18 8-14-4-19 17-1 17Z"/>
+            <path transform="translate(-40 18)" d="M543 43h53c17 0 16-17 3-19-2-18-27-24-35-8-9-5-19 0-20 9-16-4-20 18-1 18Z"/>
+            <path transform="translate(15 -83)" d="M857 108h46c15 0 15-15 2-17-1-16-22-21-30-7-8-4-16 0-18 8-13-3-17 16 0 16Z"/>
+            </g>
+            <g class="footer-night" fill="currentColor" stroke="none" opacity="0.75">
+              <circle cx="286" cy="67" r="1.5"/>
+              <circle cx="325" cy="52" r="1.1"/>
+              <circle cx="565" cy="32" r="1.6"/>
+              <circle cx="592" cy="49" r="1.1"/>
+              <circle cx="877" cy="99" r="1.5"/>
+              <circle cx="910" cy="85" r="1.2"/>
+            </g>
             <g transform="translate(-70 0)">
             <!-- Wind turbine -->
             <path d="M388 139L385 250H395L392 139"/>
@@ -437,7 +491,7 @@
             <!-- Chosen slender tree -->
             <path d="M763 240c-11-2-12-12-9-18-5-7-4-14-1-18-3-7-2-14 1-18-2-7 0-13 3-17-2-6 0-11 3-15-1-8 4-17 9-14 6-1 8 8 8 13 5 5 5 10 3 15 5 6 5 12 3 17 4 6 4 13 1 18 5 8 3 15 0 19 3 9-2 16-11 18M763 250c3-6 4-14 4-26M774 250c-4-7-5-15-5-26M766 236l-6-8M770 235l6-9M763 250h11"/>
             <!-- Camry preview -->
-            <g transform="translate(798.4901960784314 195.85686274509803) scale(0.10392156862745099)" stroke-width="12">
+            <g transform="translate(792.5458823529411 172.0338823529412) scale(0.1496470588235294)" stroke-width="12">
 <g transform="translate(1280 0) scale(-1 1)">
 <!-- Body contour, open at the wheel arches -->
 <path d="M238 475H161L130 462L141 450L137 410Q132 401 145 390L152 357Q225 305 411 302L544 232Q587 209 667 209Q788 206 873 221Q913 226 952 246L1041 278Q1080 287 1127 287L1129 307Q1138 332 1135 357L1148 382L1144 429Q1146 445 1128 459L1017 474"/>
@@ -628,6 +682,7 @@
 })();
 </script>
 
+<script src="js/theme.js"></script>
 </body>
 
 </html>
