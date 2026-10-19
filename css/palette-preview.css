@@ -159,10 +159,9 @@
 }
 .slider_area .single_slider .my_img img.framed-portrait {
   box-sizing: border-box; display: block; width: 100%; height: auto;
-  aspect-ratio: 1; object-fit: cover; object-position: center;
-  background: #fff; border: 1px solid rgba(0,0,0,.1);
-  padding: 4px; border-radius: 3px;
-  box-shadow: 0 2px 2px rgba(0,0,0,.05);
+  background: #fff; border: 0; padding: 0; border-radius: 0;
+  /* Draw the frame outward without taking space from the photo. */
+  box-shadow: 0 0 0 4px #fff, 0 0 0 5px rgba(0,0,0,.1), 0 2px 2px 5px rgba(0,0,0,.05);
 }
 @media (min-width: 992px) {
   .slider_area .single_slider .my_img { width: min(38vw, 440px, calc(100svh - 180px)); max-width: 38%; }
