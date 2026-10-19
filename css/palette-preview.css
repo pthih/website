@@ -19,8 +19,8 @@
 .intro-down-link:hover { color: var(--preview-ice); }
 .intro-down-link:focus-visible { outline-color: var(--preview-sea-glass); }
 .slicknav_menu .slicknav_icon-bar { background: var(--preview-ice); }
-.slicknav_nav { background: var(--preview-teal); }
-.slicknav_nav a { color: var(--preview-ice); }
+.slicknav_menu .slicknav_nav { background: var(--preview-teal); }
+.slicknav_menu .slicknav_nav a { color: var(--preview-ice); }
 
 .footer { background-image: none; background-color: var(--preview-teal); }
 .footer .copy-right_text .copy_right { color: var(--preview-ice); }
@@ -111,3 +111,44 @@
   .slider_area .single_slider .my_img { width: 220px; max-width: 70%; }
 }
 .slider_area .single_slider .my_img img { height: auto; }
+
+.slicknav_menu .slicknav_nav a:hover,
+.slicknav_menu .slicknav_nav a:focus-visible,
+.slicknav_menu .slicknav_nav a.active { color: var(--preview-sea-glass); background: var(--preview-teal); }
+
+/* Social profile links in the footer. */
+.footer-socials { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 18px; }
+.footer-social-link { position: relative; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 8px; color: var(--preview-sea-glass); transform-origin: 50% 85%; transition: color 180ms ease, transform 220ms ease; }
+.footer-social-link[hidden] { display: none !important; }
+.footer-social-link svg { display: block; overflow: visible; }
+.footer-social-link:hover { color: var(--preview-ice); transform: rotate(-5deg) translateY(-2px); }
+.footer-social-link:focus-visible { color: var(--preview-ice); outline: 2px solid var(--preview-sea-glass); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .footer-social-link { transition: none; } .footer-social-link:hover { transform: none; } }
+
+/* Social profile links in desktop navigation and the mobile dropdown. */
+.header-area .main-header-area .main-menu ul.header-socials { display: flex; justify-content: center; align-items: center; gap: 14px; }
+.header-area .main-header-area .main-menu ul.header-socials li { margin: 0; }
+.header-area .main-header-area .main-menu ul.header-socials li a.header-social-link,
+.slicknav_menu .slicknav_nav a.header-social-link {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; padding: 0; margin: 0;
+  color: var(--preview-sea-glass); border-radius: 8px;
+  transform-origin: 50% 85%; transition: color 180ms ease, transform 220ms ease;
+}
+.header-social-link svg { display: block; overflow: visible; }
+.header-area .main-header-area .main-menu ul.header-socials li a::before { display: none; }
+.header-area .main-header-area .main-menu ul.header-socials li a.header-social-link:hover,
+.slicknav_menu .slicknav_nav a.header-social-link:hover { color: var(--preview-ice); transform: rotate(-5deg) translateY(-2px); }
+.header-area .main-header-area .main-menu ul.header-socials li a.header-social-link:focus-visible,
+.slicknav_menu .slicknav_nav a.header-social-link:focus-visible { outline: 2px solid var(--preview-sea-glass); outline-offset: 3px; }
+.slicknav_menu .slicknav_nav li { display: inline-block; }
+.slicknav_menu .slicknav_nav { text-align: center; padding: 8px; }
+@media (prefers-reduced-motion: reduce) {
+  .header-area .main-header-area .main-menu ul.header-socials li a.header-social-link,
+  .slicknav_menu .slicknav_nav a.header-social-link { transition: none; }
+  .header-area .main-header-area .main-menu ul.header-socials li a.header-social-link:hover,
+  .slicknav_menu .slicknav_nav a.header-social-link:hover { transform: none; }
+}
+
+/* The header scrolls away, so About needs only a small landing margin. */
+#about-me { scroll-margin-top: 20px; }
