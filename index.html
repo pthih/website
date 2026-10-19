@@ -408,10 +408,10 @@
           <svg class="footer-scene-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">
             <path class="footer-scene-ground" d="M-2400 250H3600" stroke-width="1.6"/>
             <!-- Night sky -->
-            <g class="footer-night" transform="translate(-15 -70) translate(769 83) scale(1.2) rotate(-45) translate(-769 -83)">
+            <g class="footer-night" transform="translate(-15 -70) translate(769 83) scale(1.2) rotate(-45) translate(-769 -83)" stroke-width="1.6666666666666667">
               <path d="M782.5 59.62 A27 27 0 1 0 782.5 106.38 Q745 83 782.5 59.62Z"/>
             </g>
-            <g class="footer-night">
+            <g class="footer-night" mask="url(#cloud-turbine-occlusion)">
             <!-- Stars -->
             <g transform="translate(0 -44.39) scale(1 1.2825)" fill="currentColor" stroke="none" opacity="0.75">
               <circle cx="194" cy="60" r="1.8"/>
@@ -434,17 +434,40 @@
               <path d="M930 43v8m-4-4h8"/>
             </g>
             </g>
-            <g class="footer-day" transform="translate(739 13) scale(1.2)" stroke-width="1.6">
+            <g class="footer-day" transform="translate(739 13) scale(1.2)" stroke-width="1.6666666666666667">
               <circle r="21"/>
               <path d="M29.00 0.00L35.00 0.00 M25.11 14.50L30.31 17.50 M14.50 25.11L17.50 30.31 M0.00 29.00L0.00 35.00 M-14.50 25.11L-17.50 30.31 M-25.11 14.50L-30.31 17.50 M-29.00 0.00L-35.00 0.00 M-25.11 -14.50L-30.31 -17.50 M-14.50 -25.11L-17.50 -30.31 M-0.00 -29.00L-0.00 -35.00 M14.50 -25.11L17.50 -30.31 M25.11 -14.50L30.31 -17.50"/>
             </g>
-            <g class="footer-day-clouds">
+            <defs>
+              <mask id="cloud-turbine-occlusion" maskUnits="userSpaceOnUse" x="-100" y="-200" width="1400" height="600" style="mask-type: luminance;">
+                <rect x="-100" y="-200" width="1400" height="600" fill="white" stroke="none"/>
+                <g transform="translate(-70 0) translate(390 250) scale(2.0736) translate(-390 -250)" fill="black" stroke="black" stroke-width="2.2">
+                  <g transform="translate(390 134)">
+              <g class="turbine-rotor">
+              <path d="M-2-5C-5-16-4-46 0-47C4-46 5-16 2-5Z"/>
+              <path d="M-2-5C-5-16-4-46 0-47C4-46 5-16 2-5Z" transform="rotate(120)"/>
+              <path d="M-2-5C-5-16-4-46 0-47C4-46 5-16 2-5Z" transform="rotate(240)"/>
+              </g>
+                  </g>
+                </g>
+                <g transform="translate(-190 0) translate(390 250) scale(1.25) translate(-390 -250)" fill="black" stroke="black" stroke-width="2.2">
+                  <g transform="translate(390 134)">
+              <g class="turbine-rotor turbine-rotor-comparison">
+              <path d="M-2-5C-5-16-4-46 0-47C4-46 5-16 2-5Z"/>
+              <path d="M-2-5C-5-16-4-46 0-47C4-46 5-16 2-5Z" transform="rotate(120)"/>
+              <path d="M-2-5C-5-16-4-46 0-47C4-46 5-16 2-5Z" transform="rotate(240)"/>
+              </g>
+                  </g>
+                </g>
+              </mask>
+            </defs>
+            <g class="footer-day-clouds" mask="url(#cloud-turbine-occlusion)" stroke-width="2">
             <!-- Simple clouds -->
-            <path transform="translate(28 -57)" d="M268 76h47c15 0 15-15 3-17 0-16-23-23-31-8-8-4-17 0-18 8-14-4-19 17-1 17Z"/>
+            <path transform="translate(28 -100)" d="M268 76h47c15 0 15-15 3-17 0-16-23-23-31-8-8-4-17 0-18 8-14-4-19 17-1 17Z"/>
             <path transform="translate(-40 18)" d="M543 43h53c17 0 16-17 3-19-2-18-27-24-35-8-9-5-19 0-20 9-16-4-20 18-1 18Z"/>
             <path transform="translate(15 -83)" d="M857 108h46c15 0 15-15 2-17-1-16-22-21-30-7-8-4-16 0-18 8-13-3-17 16 0 16Z"/>
             </g>
-            <g class="footer-night" fill="currentColor" stroke="none" opacity="0.75">
+            <g class="footer-night" mask="url(#cloud-turbine-occlusion)" fill="currentColor" stroke="none" opacity="0.75">
               <circle cx="286" cy="67" r="1.5"/>
               <circle cx="325" cy="52" r="1.1"/>
               <circle cx="565" cy="32" r="1.6"/>
@@ -452,18 +475,57 @@
               <circle cx="877" cy="99" r="1.5"/>
               <circle cx="910" cy="85" r="1.2"/>
             </g>
-            <g transform="translate(-70 0)">
+            <g transform="translate(-70 0) translate(390 250) scale(2.0736) translate(-390 -250)" stroke-width="0.9645061728395062">
             <!-- Wind turbine -->
-            <path d="M388 139L385 250H395L392 139"/>
-            <g transform="translate(390 134)">
+            <defs>
+              <mask id="turbine-tower-occlusion" maskUnits="userSpaceOnUse" x="335" y="80" width="110" height="180" style="mask-type: luminance;">
+                <rect x="335" y="80" width="110" height="180" fill="white" stroke="none"/>
+                <g transform="translate(390 134)" fill="black" stroke="black" stroke-width="2.2">
+              <g class="turbine-rotor">
               <path d="M-2-5C-5-16-4-46 0-47C4-46 5-16 2-5Z"/>
               <path d="M-2-5C-5-16-4-46 0-47C4-46 5-16 2-5Z" transform="rotate(120)"/>
               <path d="M-2-5C-5-16-4-46 0-47C4-46 5-16 2-5Z" transform="rotate(240)"/>
+              </g>
+                </g>
+              </mask>
+            </defs>
+            <path d="M388 139L385 250H395L392 139" mask="url(#turbine-tower-occlusion)"/>
+            <g transform="translate(390 134)">
+              <g class="turbine-rotor">
+              <path d="M-2-5C-5-16-4-46 0-47C4-46 5-16 2-5Z"/>
+              <path d="M-2-5C-5-16-4-46 0-47C4-46 5-16 2-5Z" transform="rotate(120)"/>
+              <path d="M-2-5C-5-16-4-46 0-47C4-46 5-16 2-5Z" transform="rotate(240)"/>
+              </g>
+              <circle r="5"/>
+            </g>
+            </g>
+            <!-- Smaller distant turbine -->
+            <g transform="translate(-190 0) translate(390 250) scale(1.25) translate(-390 -250)" stroke-width="1.6">
+            <!-- Wind turbine -->
+            <defs>
+              <mask id="turbine-comparison-occlusion" maskUnits="userSpaceOnUse" x="335" y="80" width="110" height="180" style="mask-type: luminance;">
+                <rect x="335" y="80" width="110" height="180" fill="white" stroke="none"/>
+                <g transform="translate(390 134)" fill="black" stroke="black" stroke-width="2.2">
+              <g class="turbine-rotor turbine-rotor-comparison">
+              <path d="M-2-5C-5-16-4-46 0-47C4-46 5-16 2-5Z"/>
+              <path d="M-2-5C-5-16-4-46 0-47C4-46 5-16 2-5Z" transform="rotate(120)"/>
+              <path d="M-2-5C-5-16-4-46 0-47C4-46 5-16 2-5Z" transform="rotate(240)"/>
+              </g>
+                </g>
+              </mask>
+            </defs>
+            <path d="M388 139L385 250H395L392 139" mask="url(#turbine-comparison-occlusion)"/>
+            <g transform="translate(390 134)">
+              <g class="turbine-rotor turbine-rotor-comparison">
+              <path d="M-2-5C-5-16-4-46 0-47C4-46 5-16 2-5Z"/>
+              <path d="M-2-5C-5-16-4-46 0-47C4-46 5-16 2-5Z" transform="rotate(120)"/>
+              <path d="M-2-5C-5-16-4-46 0-47C4-46 5-16 2-5Z" transform="rotate(240)"/>
+              </g>
               <circle r="5"/>
             </g>
             </g>
             <!-- Personal house preview -->
-            <g transform="translate(439.36 121.40800000000002) scale(0.282)" stroke-width="5.67">
+            <g transform="translate(439.36 121.40800000000002) scale(0.282)" stroke-width="7.092198581560284">
 <!-- Roof and fascia -->
 <path d="M20 228L487 20L610 85L1020 228ZM55 228L490 36L592 93M294 123H526.3M295 228L610 85M20 228H1020V246H20Z"/>
 <!-- Gable vent -->
@@ -477,8 +539,8 @@
 <circle cx="367" cy="369" r="2.5" fill="currentColor" stroke="none"/>
 <!-- Simple garage wall lights -->
 <g>
-  <g transform="translate(484 305) scale(1.44) translate(-484 -305)"><path d="M484 286V292M477 296L484 292L491 296V320H477ZM477 300H491M484 320V324"/></g>
-  <g transform="translate(974 305) scale(1.44) translate(-974 -305)"><path d="M974 286V292M967 296L974 292L981 296V320H967ZM967 300H981M974 320V324"/></g>
+  <g transform="translate(484 305) scale(1.44) translate(-484 -305)" stroke-width="4.925137903861309"><path d="M484 286V292M477 296L484 292L491 296V320H477ZM477 300H491M484 320V324"/></g>
+  <g transform="translate(974 305) scale(1.44) translate(-974 -305)" stroke-width="4.925137903861309"><path d="M974 286V292M967 296L974 292L981 296V320H967ZM967 300H981M974 320V324"/></g>
 </g>
 <!-- Garage and horizontal panels -->
 <path d="M514 265H945V456H514ZM514 315H945M514 364H945M514 414H945M454 350H514M454 377H514M945 350H1003M945 377H1003"/>
@@ -486,20 +548,20 @@
             </g>
             <!-- Matching tree beside wind turbine -->
             <g transform="translate(-365 0)">            <!-- Chosen slender tree -->
-            <path d="M763 240c-11-2-12-12-9-18-5-7-4-14-1-18-3-7-2-14 1-18-2-7 0-13 3-17-2-6 0-11 3-15-1-8 4-17 9-14 6-1 8 8 8 13 5 5 5 10 3 15 5 6 5 12 3 17 4 6 4 13 1 18 5 8 3 15 0 19 3 9-2 16-11 18M763 250c3-6 4-14 4-26M774 250c-4-7-5-15-5-26M766 236l-6-8M770 235l6-9M763 250h11"/>
+            <path stroke-width="2" d="M763 240c-11-2-12-12-9-18-5-7-4-14-1-18-3-7-2-14 1-18-2-7 0-13 3-17-2-6 0-11 3-15-1-8 4-17 9-14 6-1 8 8 8 13 5 5 5 10 3 15 5 6 5 12 3 17 4 6 4 13 1 18 5 8 3 15 0 19 3 9-2 16-11 18M763 250c3-6 4-14 4-26M774 250c-4-7-5-15-5-26M766 236l-6-8M770 235l6-9M763 250h11"/>
 </g>
             <!-- Chosen slender tree -->
-            <path d="M763 240c-11-2-12-12-9-18-5-7-4-14-1-18-3-7-2-14 1-18-2-7 0-13 3-17-2-6 0-11 3-15-1-8 4-17 9-14 6-1 8 8 8 13 5 5 5 10 3 15 5 6 5 12 3 17 4 6 4 13 1 18 5 8 3 15 0 19 3 9-2 16-11 18M763 250c3-6 4-14 4-26M774 250c-4-7-5-15-5-26M766 236l-6-8M770 235l6-9M763 250h11"/>
+            <path stroke-width="2" d="M763 240c-11-2-12-12-9-18-5-7-4-14-1-18-3-7-2-14 1-18-2-7 0-13 3-17-2-6 0-11 3-15-1-8 4-17 9-14 6-1 8 8 8 13 5 5 5 10 3 15 5 6 5 12 3 17 4 6 4 13 1 18 5 8 3 15 0 19 3 9-2 16-11 18M763 250c3-6 4-14 4-26M774 250c-4-7-5-15-5-26M766 236l-6-8M770 235l6-9M763 250h11"/>
             <!-- Camry preview -->
-            <g transform="translate(792.5458823529411 172.0338823529412) scale(0.1496470588235294)" stroke-width="12">
+            <g transform="translate(792.5458823529411 172.0338823529412) scale(0.1496470588235294)" stroke-width="13.364779874213836">
 <g transform="translate(1280 0) scale(-1 1)">
-<!-- Body contour, open at the wheel arches -->
-<path d="M238 475H161L130 462L141 450L137 410Q132 401 145 390L152 357Q225 305 411 302L544 232Q587 209 667 209Q788 206 873 221Q913 226 952 246L1041 278Q1080 287 1127 287L1129 307Q1138 332 1135 357L1148 382L1144 429Q1146 445 1128 459L1017 474"/>
-<path d="M238 475L232 445A84 84 0 0 1 400 445L403 485H850L853 445A84 84 0 0 1 1021 445L1017 474M403 464L821 460Q836 460 840 446L850 420"/>
+<!-- Body contour meeting the wheels directly -->
+<path d="M246.17 475H161L130 462L141 450L137 410Q132 401 145 390L152 357Q225 305 411 302L544 232Q587 209 667 209Q788 206 873 221Q913 226 952 246L1041 278Q1080 287 1127 287L1129 307Q1138 332 1135 357L1148 382L1144 429Q1146 445 1128 459L1006.75 474"/>
+<path d="M385.83 475H867.17"/>
 <!-- Glass and roofline -->
-<path d="M415 305L555 239Q592 219 665 218Q782 214 830 228Q867 238 896 258Q907 269 910 284Q863 306 491 316L416 305ZM687 220L663 310M701 220L680 309M714 220L707 308M847 235L843 302"/>
+<path d="M665 218Q782 214 830 228Q867 238 896 258Q907 269 910 284Q863 306 491 316L416 305M687 209L663 310M701 209L687 311M714 210L707 308M847 235L843 302"/>
 <!-- Mirror, door seams and handles -->
-<path d="M474 288Q500 276 504 294Q507 314 485 319Q469 322 460 312Q458 298 474 288ZM464 317L457 327Q472 337 485 331L485 320M418 309Q398 358 428 464M687 311Q675 385 685 462M908 289Q934 325 904 356L862 397Q848 418 842 443"/>
+<path d="M474 288Q500 276 504 294Q507 314 485 319Q469 322 460 312Q458 298 474 288ZM464 317L457 327Q472 337 485 331L485 320M418 309Q398 358 428 475M687 311Q675 385 685 475M908 289Q934 325 904 356L862 397Q848 428 842 475"/>
 <path d="M625 331Q641 325 659 332L676 332L674 339H622Q614 335 625 331ZM846 323Q861 317 880 324H895L893 331H844Q836 327 846 323Z"/>
 <!-- Lamps and bumper details -->
 <path d="M153 357L249 346L228 361L147 378M175 354L161 373M140 398L150 398L176 450Q186 449 188 459L208 465H234M140 410H154M141 420H159M142 431H165M143 441H170M1130 314Q1052 313 1034 324Q1030 330 1065 336L1112 348L1134 345M1112 348Q1084 395 1080 421Q1077 433 1108 428M1111 385L1148 382M1078 464L1144 420"/>
@@ -507,12 +569,13 @@
 <circle cx="316" cy="445" r="76"/><circle cx="937" cy="445" r="76"/>
 <circle cx="316" cy="445" r="52"/><circle cx="937" cy="445" r="52"/>
 <circle cx="316" cy="445" r="8"/><circle cx="937" cy="445" r="8"/>
-<g stroke-width="8">
-<path d="M316 393V437M316 453V497M264 445H308M324 445H368M279 408L310 439M322 451L353 482M279 482L310 451M322 439L353 408"/>
-<path d="M937 393V437M937 453V497M885 445H929M945 445H989M900 408L931 439M943 451L974 482M900 482L931 451M943 439L974 408"/>
+<g>
+<path d="M316.00 437.00L316.00 393.00 M323.61 442.53L365.45 428.93 M320.70 451.47L346.56 487.07 M311.30 451.47L285.44 487.07 M308.39 442.53L266.55 428.93"/>
+<path d="M937.00 437.00L937.00 393.00 M944.61 442.53L986.45 428.93 M941.70 451.47L967.56 487.07 M932.30 451.47L906.44 487.07 M929.39 442.53L887.55 428.93"/>
 </g>
 </g>
 
+            
             </g>
           </svg>
         </div>
