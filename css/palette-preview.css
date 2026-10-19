@@ -196,12 +196,11 @@
 }
 
 /* Full-width baseline with transparent, centered footer line art. */
-.footer-scene { position: relative; width: 100%; color: var(--preview-sea-glass); padding-top: 36px; }
+.footer-scene { position: relative; width: 100%; color: var(--preview-sea-glass); padding-top: 36px; overflow: hidden; }
 .footer-scene-art { position: relative; z-index: 1; display: block; width: min(50%, 720px); height: auto; margin: 0 auto; overflow: visible; }
-.footer-scene::after { content: ""; position: absolute; left: 0; right: 0; top: calc(36px + (min(50vw, 720px) * 250 / 1200)); height: 1px; background: currentColor; }
 .footer .footer_top { padding-top: 50px; padding-bottom: 23px; }
 @media (max-width: 767px) {
-  .footer-scene { padding-top: 28px; }
-  .footer-scene::after { top: calc(28px + (50vw * 250 / 1200)); }
+  .footer-scene { padding-top: 28px; overflow: hidden; }
+  .footer-scene-art { width: 112.5%; max-width: none; margin-left: -6.25%; }
   .footer .footer_top { padding-top: 62px; padding-bottom: 5px; }
 }
