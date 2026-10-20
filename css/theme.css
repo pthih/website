@@ -103,3 +103,65 @@ html[data-theme="light"] .slider_area .single_slider .slider_text h3.personal-in
 .footer .footer-scene { overflow-x: clip; overflow-y: visible; }
 
 /* Give the smaller turbine its own pace and starting angle. */
+
+/* Theme: smooth theme colors without changing illustration animations. */
+@media (prefers-reduced-motion: no-preference) {
+  body,
+  .slider_area .single_slider,
+  .sample-text-area,
+  .portfolio-section,
+  .footer,
+  .footer::before,
+  .slicknav_menu .slicknav_nav,
+  .slicknav_menu .slicknav_icon-bar,
+  .slider_text h3.personal-intro,
+  .slider_text h3.personal-intro > span,
+  .slider_text h3.personal-intro .intro-location,
+  .text-heading,
+  .about-introduction,
+  .about-introduction p,
+  .about-background,
+  .about-background-label,
+  .about-contact,
+  .about-contact a,
+  .about-disclaimer,
+  .portfolio-divider,
+  .single_gallery .gallery_heading,
+  .single_gallery .gallery_heading h4,
+  .single_gallery .gallery_heading a,
+  .single_gallery .gallery_heading p,
+  .logo-switch button,
+  .more-about-link,
+  .header-area .main-header-area .Appointment .book_btn a,
+  .header-social-link,
+  .footer-social-link,
+  .intro-down-link,
+  .footer-scene,
+  .copy_right,
+  .copy_right a,
+  .theme-toggle {
+    transition: background-color 400ms ease, color 400ms ease, border-color 400ms ease;
+  }
+  .framed-portrait,
+  .single_gallery .thumb > a { transition: box-shadow 400ms ease; }
+  .sea-glass-header-logo,
+  .footer .copy-right_text img { transition: filter 400ms ease; }
+  .header-social-link,
+  .footer-social-link { transition: background-color 400ms ease, color 400ms ease, border-color 400ms ease, transform 220ms ease; }
+}
+
+/* Theme: show both celestial objects while they traverse the shared arc. */
+.celestial-orbit { transform-origin: 0 0; }
+html[data-theme] .celestial-orbit.is-travelling .celestial-art { display: inline; }
+
+
+/* Theme: retain sky layers long enough for their departure and arrival. */
+html[data-theme] .sky-transition .sky-stars,
+html[data-theme] .sky-transition .footer-day-clouds { display: inline; }
+
+/* Theme: the moving crescent occludes stars while matching the sky. */
+.celestial-moon path { fill: #173c40; }
+html[data-theme="light"] .celestial-moon path { fill: #ccdfd8; }
+@media (prefers-reduced-motion: no-preference) {
+  .celestial-moon path { transition: fill 400ms ease; }
+}
