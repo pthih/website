@@ -104,7 +104,7 @@ html[data-theme="light"] .slider_area .single_slider .slider_text h3.personal-in
 
 /* Give the smaller turbine its own pace and starting angle. */
 
-/* Theme: smooth theme colors without changing illustration animations. */
+/* Footer: smooth theme colors without changing illustration animations. */
 @media (prefers-reduced-motion: no-preference) {
   body,
   .slider_area .single_slider,
@@ -150,18 +150,26 @@ html[data-theme="light"] .slider_area .single_slider .slider_text h3.personal-in
   .footer-social-link { transition: background-color 400ms ease, color 400ms ease, border-color 400ms ease, transform 220ms ease; }
 }
 
-/* Theme: show both celestial objects while they traverse the shared arc. */
+/* Footer: show both celestial objects while they traverse the shared arc. */
 .celestial-orbit { transform-origin: 0 0; }
 html[data-theme] .celestial-orbit.is-travelling .celestial-art { display: inline; }
 
 
-/* Theme: retain sky layers long enough for their departure and arrival. */
+/* Footer: retain sky layers long enough for their departure and arrival. */
 html[data-theme] .sky-transition .sky-stars,
 html[data-theme] .sky-transition .footer-day-clouds { display: inline; }
 
-/* Theme: the moving crescent occludes stars while matching the sky. */
+/* Footer: the moving crescent occludes stars while matching the sky. */
 .celestial-moon path { fill: #173c40; }
 html[data-theme="light"] .celestial-moon path { fill: #ccdfd8; }
 @media (prefers-reduced-motion: no-preference) {
   .celestial-moon path { transition: fill 400ms ease; }
+}
+
+/* Preview proportion exploration: expose more sky above the footer scene. */
+.footer { margin-top: -40px; padding-top: 120px; }
+
+/* Footer: fit the complete composition on phones only. */
+@media (max-width: 767px) {
+  .footer .footer-scene-art { width: 100%; max-width: none; height: auto; margin: 0; }
 }
