@@ -119,9 +119,7 @@
                         <div class="row align-items-center">
                             <div class="col-xl-3 col-lg-2">
                                 <div class="logo">
-                                    <a href="index.html">
-                                        <img class="sea-glass-header-logo" src="img/sea-glass-logo.png" alt="Phyo Thiha">
-                                    </a>
+                                    <span class="header-logo-frame"><img class="sea-glass-header-logo" src="img/header-logo.svg" alt="Phyo Thiha"></span>
                                 </div>
                             </div>
 
@@ -754,22 +752,7 @@
 </script>
 
 
-<script>
-(function () {
-  var logo = document.querySelector('.sea-glass-header-logo');
-  var contact = document.querySelector('.Appointment .book_btn a');
-  if (!logo || !contact) return;
-  function matchHeight() {
-    var height = contact.getBoundingClientRect().height;
-    logo.style.height = (height > 0 ? height : 48) + 'px';
-  }
-  matchHeight();
-  if (window.ResizeObserver) new ResizeObserver(matchHeight).observe(contact);
-  window.addEventListener('resize', matchHeight);
-  window.addEventListener('load', matchHeight, { once: true });
-  if (document.fonts) document.fonts.ready.then(matchHeight);
-})();
-</script>
+
 
 
 <script>
