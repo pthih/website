@@ -81,9 +81,14 @@
         x = out;
       } else if (t < 5900) {
         const u = (t - 2200) / 3700;
-        x = enter * (1 - u) ** 2;
-        if (u > 0.72) {
-          const b = (u - 0.72) / 0.28;
+        // Hold the approach speed briefly, then ease into the same parking spot.
+        const brakeStart = 0.72;
+        const remaining = u < brakeStart
+          ? 1 - 2 * u / (1 + brakeStart)
+          : (1 - u) ** 2 / (1 - brakeStart ** 2);
+        x = enter * remaining;
+        if (u > brakeStart) {
+          const b = (u - brakeStart) / (1 - brakeStart);
           pitch = -2.5 * Math.sin(Math.PI * b);
           pivot = 937;
         }
