@@ -44,7 +44,7 @@
       .burma-logo-stage { display: block; position: relative; background: white; }
       .single_gallery .thumb .burma-original { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 220ms ease; background: white; }
       .burma-logo-stage.show-original .burma-original { opacity: 1; }
-      .logo-switch { display: flex; gap: 8px; margin: 12px 0 16px; flex-wrap: wrap; }
+      .logo-switch { display: flex; justify-content: flex-end; width: 441px; max-width: 100%; gap: 8px; margin: 12px 0 16px; flex-wrap: wrap; }
       .logo-switch[hidden] { display: none; }
       .logo-switch button { border: 1px solid #b88755; border-radius: 6px; background: white; color: #845022; font: inherit; font-size: 13px; padding: 6px 10px; cursor: pointer; }
       .logo-switch button[aria-pressed="true"] { background: #845022; color: white; }
@@ -94,6 +94,12 @@ html { --project-logo-color:#173c40; }
 html[data-theme="dark"] { --project-logo-color:#9dd7c8; }
 .single_gallery .thumb :is(.bonsai-theme-logo,.shotwell-theme-logo,.my999app-theme-logo,.burma-theme-logo) { display:block; width:100%; height:auto; color:var(--project-logo-color); background:transparent; }
 .burma-logo-stage { background:transparent; }
+</style>
+<style id="burma-caption-alignment">
+@media (min-width: 992px) {
+  .single_gallery .thumb:has(.logo-switch) { position: relative; }
+  .single_gallery .thumb > .logo-switch { position: absolute; top: 100%; left: 0; }
+}
 </style>
 </head>
 
