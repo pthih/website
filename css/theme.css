@@ -190,3 +190,7 @@ html[data-theme="light"] #headlight-beam { visibility: hidden; opacity: 0 !impor
 .header-logo-frame { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 4px 12px; border: 2px solid #9dd7c8; border-radius: 8px; vertical-align: middle; }
 .header-area .main-header-area .logo .header-logo-frame img.sea-glass-header-logo { height: 36px; width: auto; max-width: 100%; }
 html[data-theme="light"] .header-logo-frame { border-color: #173c40; }
+
+/* Keep the About and Projects section headings equally sized. */
+#about-me.text-heading,
+.portfolio-heading.text-heading { font-size: 28px; }
