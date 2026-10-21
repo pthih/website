@@ -199,3 +199,13 @@ html[data-theme="light"] .header-logo-frame { border-color: #173c40; }
 @media (prefers-reduced-motion: no-preference) {
   #car-travel [fill="var(--car-surface)"] { transition: fill 400ms ease; }
 }
+
+/* Compact the space above the footer illustration on phones and tablets. */
+@media (max-width: 991px) {
+  .footer { padding-top: 0; }
+  .footer .footer-scene { padding-top: 8px; }
+}
+/* Keep the tablet baseline aligned with the reduced scene padding. */
+@media (min-width: 768px) and (max-width: 991px) {
+  .footer .footer-scene::after { top: calc(8px + (min(50cqw, 720px) * 250 / 1200)); }
+}
