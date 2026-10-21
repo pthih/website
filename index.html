@@ -599,31 +599,26 @@
 </g>
             <!-- Chosen slender tree -->
             <path transform="translate(80 0) translate(769 250) scale(1.495) translate(-769 -250)" stroke-width="1.3377926421404682" d="M763 240c-11-2-12-12-9-18-5-7-4-14-1-18-3-7-2-14 1-18-2-7 0-13 3-17-2-6 0-11 3-15-1-8 4-17 9-14 6-1 8 8 8 13 5 5 5 10 3 15 5 6 5 12 3 17 4 6 4 13 1 18 5 8 3 15 0 19 3 9-2 16-11 18M763 250c3-6 4-14 4-26M774 250c-4-7-5-15-5-26M766 236l-6-8M770 235l6-9M763 250h11"/>
-            <!-- Camry -->
-            <g transform="translate(126.145529 0) translate(888 250) scale(1.495) translate(-888 -250) translate(792.5458823529411 172.0338823529412) scale(0.1496470588235294)" stroke-width="8.93965208977514">
-<g transform="translate(1280 0) scale(-1 1)">
-<!-- Body contour meeting the wheels directly -->
-<path d="M246.17 475H161L130 462L141 450L137 410Q132 401 145 390L152 357Q225 305 411 302L544 232Q587 209 667 209Q788 206 873 221Q913 226 952 246L1041 278Q1080 287 1127 287L1129 307Q1138 332 1135 357L1148 382L1144 429Q1146 445 1128 459L1006.75 474"/>
-<path d="M385.83 475H867.17"/>
-<!-- Glass and roofline -->
-<path d="M830 215Q867 238 896 258Q907 269 910 284Q863 306 491 316L416 305M701 209L687 311M847 235L843.284 297.249"/>
-<!-- Mirror, door seams and handles -->
-<path d="M474 288Q500 276 504 294Q507 314 485 319Q469 322 460 312Q458 298 474 288ZM464 317L457 327Q472 337 485 331L485 320M418 309Q398 358 428 475M687 311Q675 385 685 475M908 289Q934 325 904 356L862 397Q848 428 842 475"/>
-<path d="M625 331Q641 325 659 332L676 332L674 339H622Q614 335 625 331ZM846 323Q861 317 880 324H895L893 331H844Q836 327 846 323Z"/>
-<!-- Lamps and bumper details -->
-<path d="M153 357L249 346L228 361L147 378M175 354L161 373M140 398L150 398L176 450Q186 449 188 459L208 465H234M140 410H154M141 420H159M142 431H165M143 441H170M1130 314Q1052 313 1034 324Q1030 330 1065 336L1112 348L1134 345M1112 348Q1084 395 1080 421Q1077 433 1108 428M1111 385L1148 382M1078 464L1144 420"/>
-<!-- Wheels -->
-<circle cx="316" cy="445" r="76"/><circle cx="937" cy="445" r="76"/>
-<circle cx="316" cy="445" r="52"/><circle cx="937" cy="445" r="52"/>
-<circle cx="316" cy="445" r="8"/><circle cx="937" cy="445" r="8"/>
-<g>
-<path d="M316.00 437.00L316.00 393.00 M323.61 442.53L365.45 428.93 M320.70 451.47L346.56 487.07 M311.30 451.47L285.44 487.07 M308.39 442.53L266.55 428.93"/>
-<path d="M937.00 437.00L937.00 393.00 M944.61 442.53L986.45 428.93 M941.70 451.47L967.56 487.07 M932.30 451.47L906.44 487.07 M929.39 442.53L887.55 428.93"/>
-</g>
-</g>
+            <!-- Interactive Camry: body, wheels, and dark-mode headlight beam. -->
+<defs><linearGradient id="headlight-fade" gradientUnits="userSpaceOnUse" x1="158" y1="360" x2="-260" y2="360"><stop offset="0" stop-color="#f5f5df" stop-opacity=".34" /><stop offset=".22" stop-color="#f5f5df" stop-opacity=".22" /><stop offset=".65" stop-color="#f5f5df" stop-opacity=".07" /><stop offset="1" stop-color="#f5f5df" stop-opacity="0" /></linearGradient></defs>
+<g id="car-dust" fill="none" stroke="currentColor" stroke-width="1.5" pointer-events="none" />
+<g id="car-travel" tabindex="0" role="button" aria-label="Drive the car around the scene" style="cursor:pointer"><g transform="translate(126.145529 0) translate(888 250) scale(1.495) translate(-888 -250) translate(792.5458823529411 172.0338823529412) scale(0.1496470588235294)" stroke-width="8.93965208977514">
+<g transform="translate(1280 0) scale(-1 1)"><g id="car-suspension"><g id="headlight-beam" style="display:none;opacity:0;transition:opacity 280ms ease;pointer-events:none" stroke="none" fill="url(#headlight-fade)"><path d="M158 350Q161 357 158 368L-260 466L-260 268Z" /></g><path d="M246.17 475H161L130 462L141 450L137 410Q132 401 145 390L152 357Q225 305 411 302L544 232Q587 209 667 209Q788 206 873 221Q913 226 952 246L1041 278Q1080 287 1127 287L1129 307Q1138 332 1135 357L1148 382L1144 429Q1146 445 1128 459L1006.75 474H246.17Z" fill-rule="evenodd" fill="var(--car-surface)" stroke="none" /><path d="M246.17 475H161L130 462L141 450L137 410Q132 401 145 390L152 357Q225 305 411 302L544 232Q587 209 667 209Q788 206 873 221Q913 226 952 246L1041 278Q1080 287 1127 287L1129 307Q1138 332 1135 357L1148 382L1144 429Q1146 445 1128 459L1006.75 474" />
+<path d="M385.83 475H867.17" />
 
+<path d="M830 215Q867 238 896 258Q907 269 910 284Q863 306 491 316L416 305M701 209L687 311M847 235L843.284 297.249" />
+
+<path d="M474 288Q500 276 504 294Q507 314 485 319Q469 322 460 312Q458 298 474 288ZM464 317L457 327Q472 337 485 331L485 320M418 309Q398 358 428 475M687 311Q675 385 685 475M908 289Q934 325 904 356L862 397Q848 428 842 475" />
+<path d="M625 331Q641 325 659 332L676 332L674 339H622Q614 335 625 331ZM846 323Q861 317 880 324H895L893 331H844Q836 327 846 323Z" />
+
+<path d="M153 357L249 346L228 361L147 378M175 354L161 373M140 398L150 398L176 450Q186 449 188 459L208 465H234M140 410H154M141 420H159M142 431H165M143 441H170M1130 314Q1052 313 1034 324Q1030 330 1065 336L1112 348L1134 345M1112 348Q1084 395 1080 421Q1077 433 1108 428M1111 385L1148 382M1078 464L1144 420" />
+
+<path id="car-shark-fin" d="M778 213Q789 204 800 197Q806 193 815 193Q819 193 819 198L819 207Q819 212 825 216Z" fill="var(--car-surface)" stroke-linejoin="round" /></g><g class="drive-wheel" data-cx="316"><circle cx="316" cy="445" r="76" fill="var(--car-surface)" /><circle cx="316" cy="445" r="52" /><circle cx="316" cy="445" r="8" /><path d="M316.00 437.00L316.00 393.00 M323.61 442.53L365.45 428.93 M320.70 451.47L346.56 487.07 M311.30 451.47L285.44 487.07 M308.39 442.53L266.55 428.93" />
+</g><g class="drive-wheel" data-cx="937"><circle cx="937" cy="445" r="76" fill="var(--car-surface)" /><circle cx="937" cy="445" r="52" /><circle cx="937" cy="445" r="8" /><path d="M937.00 437.00L937.00 393.00 M944.61 442.53L986.45 428.93 M941.70 451.47L967.56 487.07 M932.30 451.47L906.44 487.07 M929.39 442.53L887.55 428.93" />
+</g></g></g>
 
             </g>
+
 
           </g>
           </svg>
@@ -798,6 +793,7 @@
 <script src="js/theme.js"></script>
 <script src="js/turbines.js"></script>
 <script src="js/footer-mobile-fit.js"></script>
+<script src="js/car.js"></script>
 </body>
 
 </html>

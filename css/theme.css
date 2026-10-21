@@ -176,3 +176,12 @@ html[data-theme="light"] .celestial-moon path { fill: #ccdfd8; }
 
 /* Match About’s vertical accent to the section divider. */
 .about-introduction { border-left-width: 4px; }
+
+/* Interactive footer car. */
+.footer-scene { --car-surface: #173c40; }
+html[data-theme="light"] .footer-scene { --car-surface: #ccdfd8; }
+#car-travel:focus-visible { outline: none; filter: drop-shadow(0 0 3px currentColor); }
+html[data-theme="light"] #headlight-beam { visibility: hidden; opacity: 0 !important; }
+@media (prefers-reduced-motion: reduce) {
+  #headlight-beam { transition: none !important; }
+}
