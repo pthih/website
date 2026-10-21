@@ -185,3 +185,27 @@ html[data-theme="light"] #headlight-beam { visibility: hidden; opacity: 0 !impor
 @media (prefers-reduced-motion: reduce) {
   #headlight-beam { transition: none !important; }
 }
+
+/* Noninteractive vector header logo with the primary button outline. */
+.header-logo-frame { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 4px 12px; border: 2px solid #9dd7c8; border-radius: 8px; vertical-align: middle; }
+.header-area .main-header-area .logo .header-logo-frame img.sea-glass-header-logo { height: 36px; width: auto; max-width: 100%; }
+html[data-theme="light"] .header-logo-frame { border-color: #173c40; }
+
+/* Keep the About and Projects section headings equally sized. */
+#about-me.text-heading,
+.portfolio-heading.text-heading { font-size: 28px; }
+
+/* Match the car surface fade to the footer's theme transition. */
+@media (prefers-reduced-motion: no-preference) {
+  #car-travel [fill="var(--car-surface)"] { transition: fill 400ms ease; }
+}
+
+/* Compact the space above the footer illustration on phones and tablets. */
+@media (max-width: 991px) {
+  .footer { padding-top: 0; }
+  .footer .footer-scene { padding-top: 8px; }
+}
+/* Keep the tablet baseline aligned with the reduced scene padding. */
+@media (min-width: 768px) and (max-width: 991px) {
+  .footer .footer-scene::after { top: calc(8px + (min(50cqw, 720px) * 250 / 1200)); }
+}
