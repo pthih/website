@@ -194,3 +194,8 @@ html[data-theme="light"] .header-logo-frame { border-color: #173c40; }
 /* Keep the About and Projects section headings equally sized. */
 #about-me.text-heading,
 .portfolio-heading.text-heading { font-size: 28px; }
+
+/* Match the car surface fade to the footer's theme transition. */
+@media (prefers-reduced-motion: no-preference) {
+  #car-travel [fill="var(--car-surface)"] { transition: fill 400ms ease; }
+}
