@@ -18,6 +18,60 @@
   let distance = 0;
   let lastDust = 0;
   beam.style.display = 'inline';
+// The moving body silhouette occludes the road-bound wheels, except at its wheel wells.
+const wheelBodyMask = (() => {
+  const ns = 'http://www.w3.org/2000/svg';
+  const make = (tag, attrs) => {
+    const el = document.createElementNS(ns, tag);
+    for (const [key, value] of Object.entries(attrs)) el.setAttribute(key, value);
+    return el;
+  };
+  const surface = body.querySelector('path[fill="var(--car-surface)"]');
+  if (!surface) return null;
+  const defs = make('defs', {});
+  const mask = make('mask', { id:'preview-car-body-mask', maskUnits:'userSpaceOnUse', maskContentUnits:'userSpaceOnUse', x:'-2000', y:'-2000', width:'6000', height:'6000', style:'mask-type:luminance' });
+  mask.append(make('rect', { x:'-2000', y:'-2000', width:'6000', height:'6000', fill:'white', stroke:'none' }));
+  const mirror = make('g', { transform:'translate(1280 0) scale(-1 1)' });
+  const moving = make('g', {});
+  moving.append(make('path', { d:surface.getAttribute('d'), transform:'translate(-100 155)', fill:'black', stroke:'none' }));
+  for (const wheel of wheels) {
+    moving.append(make('circle', { cx:String(1280-Number(wheel.dataset.cx)), cy:'445', r:'82', fill:'white', stroke:'none' }));
+  }
+  mirror.append(moving);
+  mask.append(mirror);
+  defs.append(mask);
+  wheels[0].parentNode.insertBefore(defs, wheels[0]);
+  for (const wheel of wheels) {
+    const holder = make('g', { mask:'url(#preview-car-body-mask)' });
+    wheel.parentNode.insertBefore(holder, wheel);
+    holder.append(wheel);
+  }
+  const outlineMirror = make('g', { transform:'translate(1280 0) scale(-1 1)', 'pointer-events':'none' });
+  const outlines = make('g', { fill:'none', stroke:'currentColor', 'stroke-width':'8.9397', 'stroke-linecap':'round', 'stroke-linejoin':'round' });
+  for (const wheel of wheels) {
+    const cx = 1280 - Number(wheel.dataset.cx);
+    // Continue the top of the opening down to the lower edge of the body.
+    const edgeY = 475;
+    const half = Math.sqrt(82 ** 2 - (edgeY - 445) ** 2);
+    outlines.append(make('path', { d:`M${cx-half} ${edgeY} A82 82 0 1 1 ${cx+half} ${edgeY}` }));
+  }
+  outlineMirror.append(outlines);
+  wheels[0].parentNode.parentNode.append(outlineMirror);
+  return { moving, outlines };
+})();
+function updateWheelBodyMask(pitch, pivot) {
+  // Match the wheel-side coordinates to the mirrored body artwork.
+  if (wheelBodyMask) {
+    const transform = `rotate(${-pitch} ${1280 - pivot} 445)`;
+    wheelBodyMask.moving.setAttribute('transform', transform);
+    wheelBodyMask.outlines.setAttribute('transform', transform);
+  }
+}
+
+
+
+
+
 
   function puff(x, now) {
     const element = document.createElementNS('http://www.w3.org/2000/svg', 'path');
@@ -104,6 +158,8 @@
       previous = x;
       car.setAttribute('transform', `translate(${x} 0)`);
       body.setAttribute('transform', `rotate(${pitch} ${pivot} 445)`);
+      updateWheelBodyMask(pitch, pivot);
+
       const slip = t < 550 ? (1 - t / 550) * t * 0.45 : 0;
       const angle = -(distance / radius * 180 / Math.PI + slip);
       for (const wheel of wheels) {
@@ -115,6 +171,8 @@
       } else {
         car.removeAttribute('transform');
         body.removeAttribute('transform');
+        updateWheelBodyMask(0, 937);
+
         beam.style.opacity = '0';
         running = false;
       }
