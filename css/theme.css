@@ -9,7 +9,7 @@ html[data-theme="light"] .slider_area .single_slider.slider_bg_1,
 html[data-theme="light"] .footer,
 html[data-theme="light"] .footer::before,
 html[data-theme="light"] .header-area .main-header-area.sticky,
-html[data-theme="light"] .slicknav_menu .slicknav_nav { background-color: #ccdfd8; }
+html[data-theme="light"] .slicknav_menu .slicknav_nav { background-color: #f3eadb; }
 html[data-theme="light"] .slider_area .single_slider .slider_text h3.personal-intro,
 html[data-theme="light"] .slider_area .single_slider .slider_text h3.personal-intro > span,
 html[data-theme="light"] .slider_area .single_slider .slider_text h3.personal-intro .intro-location,
@@ -161,7 +161,7 @@ html[data-theme] .sky-transition .footer-day-clouds { display: inline; }
 
 /* Footer: the moving crescent occludes stars while matching the sky. */
 .celestial-moon path { fill: #173c40; }
-html[data-theme="light"] .celestial-moon path { fill: #ccdfd8; }
+html[data-theme="light"] .celestial-moon path { fill: #f3eadb; }
 @media (prefers-reduced-motion: no-preference) {
   .celestial-moon path { transition: fill 400ms ease; }
 }
@@ -179,7 +179,7 @@ html[data-theme="light"] .celestial-moon path { fill: #ccdfd8; }
 
 /* Interactive footer car. */
 .footer-scene { --car-surface: #173c40; }
-html[data-theme="light"] .footer-scene { --car-surface: #ccdfd8; }
+html[data-theme="light"] .footer-scene { --car-surface: #f3eadb; }
 #car-travel:focus-visible { outline: none; filter: drop-shadow(0 0 3px currentColor); }
 html[data-theme="light"] #headlight-beam { visibility: hidden; opacity: 0 !important; }
 @media (prefers-reduced-motion: reduce) {
