@@ -762,7 +762,7 @@ Based on a <a href="https://colorlib.com" target="_blank">Colorlib</a> template,
   var selected = 'revised';
   function show(version) {
     stage.classList.toggle('show-original', version === 'original');
-    var images = [stage.querySelector('img'), stage.querySelector('.burma-original')];
+    var images = [stage.querySelector('.burma-theme-logo'), stage.querySelector('.burma-original')];
     images[0].setAttribute('aria-hidden', String(version === 'original'));
     images[1].setAttribute('aria-hidden', String(version !== 'original'));
   }
