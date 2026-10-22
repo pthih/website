@@ -9,7 +9,7 @@ html[data-theme="light"] .slider_area .single_slider.slider_bg_1,
 html[data-theme="light"] .footer,
 html[data-theme="light"] .footer::before,
 html[data-theme="light"] .header-area .main-header-area.sticky,
-html[data-theme="light"] .slicknav_menu .slicknav_nav { background-color: #ccdfd8; }
+html[data-theme="light"] .slicknav_menu .slicknav_nav { background-color: #f3eadb; }
 html[data-theme="light"] .slider_area .single_slider .slider_text h3.personal-intro,
 html[data-theme="light"] .slider_area .single_slider .slider_text h3.personal-intro > span,
 html[data-theme="light"] .slider_area .single_slider .slider_text h3.personal-intro .intro-location,
@@ -88,10 +88,13 @@ html[data-theme="light"] .slider_area .single_slider .my_img img.framed-portrait
 
 html[data-theme="dark"] .footer-day-clouds { display: none; }
 
-/* Keep the phone toggle compact; retain its accessible name. */
+/* Use the compact icon toggle at every size; retain its accessible name. */
+.theme-toggle .theme-toggle-label { display: none; }
+.theme-toggle { width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: 50%; }
+
+/* Let the complete mobile credit scroll above the fixed theme button. */
 @media (max-width: 767px) {
-  .theme-toggle .theme-toggle-label { display: none; }
-  .theme-toggle { width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: 50%; }
+  .footer .copy-right_text { padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
 }
 
 /* Separate the location from the name in the light intro. */
@@ -161,7 +164,7 @@ html[data-theme] .sky-transition .footer-day-clouds { display: inline; }
 
 /* Footer: the moving crescent occludes stars while matching the sky. */
 .celestial-moon path { fill: #173c40; }
-html[data-theme="light"] .celestial-moon path { fill: #ccdfd8; }
+html[data-theme="light"] .celestial-moon path { fill: #f3eadb; }
 @media (prefers-reduced-motion: no-preference) {
   .celestial-moon path { transition: fill 400ms ease; }
 }
@@ -179,7 +182,7 @@ html[data-theme="light"] .celestial-moon path { fill: #ccdfd8; }
 
 /* Interactive footer car. */
 .footer-scene { --car-surface: #173c40; }
-html[data-theme="light"] .footer-scene { --car-surface: #ccdfd8; }
+html[data-theme="light"] .footer-scene { --car-surface: #f3eadb; }
 #car-travel:focus-visible { outline: none; filter: drop-shadow(0 0 3px currentColor); }
 html[data-theme="light"] #headlight-beam { visibility: hidden; opacity: 0 !important; }
 @media (prefers-reduced-motion: reduce) {

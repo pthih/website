@@ -3727,14 +3727,6 @@ h6 {
   background-color: #e66686;
 }
 
-/* line 441, ../../Arafath/CL/Cl November/228. Resume-02/HTML/scss/_elements.scss */
-.single-gallery-image {
-  margin-top: 30px;
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
-  background-size: cover !important;
-  height: 200px;
-}
 
 /* line 449, ../../Arafath/CL/Cl November/228. Resume-02/HTML/scss/_elements.scss */
 .list-style {
@@ -6316,7 +6308,6 @@ h6 {
 #about-me { scroll-margin-top: 120px; }
 #about-me:focus { outline: none; }
 
-.homepage-image-gallery[hidden] { display: none !important; }
 
 /* Match the rounded outlines of the two primary links. */
 .more-about-link,
