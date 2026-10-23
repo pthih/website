@@ -218,3 +218,24 @@
 
 /* Override Bootstrap’s SVG clipping so raised sky details stay visible. */
 .footer .footer-scene-art { overflow: visible; }
+
+/* Keep desktop socials centered independently of the left-hand logo. */
+@media (min-width: 992px) {
+  .header-area .header-layout-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  }
+  .header-area .header-layout-row > .header-logo-column {
+    grid-column: 1;
+    grid-row: 1;
+    width: auto;
+    max-width: none;
+  }
+  .header-area .header-layout-row > .header-social-column {
+    grid-column: 2;
+    grid-row: 1;
+    width: auto;
+    max-width: none;
+  }
+  .header-area .header-layout-row > .col-12 { display: none; }
+}
