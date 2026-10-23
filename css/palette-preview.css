@@ -2,9 +2,9 @@
 :root { --preview-teal: #173c40; --preview-ice: #f1f7f6; --preview-sea-glass: #9dd7c8; }
 .slider_area .single_slider.slider_bg_1 { background-image: none; background-color: var(--preview-teal); }
 .header-area .main-header-area.sticky { background: var(--preview-teal); }
-.slider_area .single_slider .slider_text h3.personal-intro,
-.slider_area .single_slider .slider_text h3.personal-intro > span { color: var(--preview-ice); }
-.slider_area .single_slider .slider_text h3.personal-intro .intro-location { color: var(--preview-sea-glass); }
+.slider_area .single_slider .slider_text :is(h1, h3).personal-intro,
+.slider_area .single_slider .slider_text :is(h1, h3).personal-intro > span { color: var(--preview-ice); }
+.slider_area .single_slider .slider_text :is(h1, h3).personal-intro .intro-location { color: var(--preview-sea-glass); }
 .header-area .main-header-area .main-menu ul li a { color: var(--preview-ice); }
 .header-area .main-header-area .main-menu ul li a:hover,
 .header-area .main-header-area .main-menu ul li a.active { color: var(--preview-sea-glass); }
