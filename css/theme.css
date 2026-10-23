@@ -183,6 +183,7 @@ html[data-theme="light"] .celestial-moon path { fill: #f3eadb; }
 /* Interactive footer car. */
 .footer-scene { --car-surface: #173c40; }
 html[data-theme="light"] .footer-scene { --car-surface: #f3eadb; }
+#car-travel:focus { outline: none; }
 #car-travel:focus-visible { outline: none; filter: drop-shadow(0 0 3px currentColor); }
 html[data-theme="light"] #headlight-beam { visibility: hidden; opacity: 0 !important; }
 @media (prefers-reduced-motion: reduce) {
@@ -212,3 +213,6 @@ html[data-theme="light"] .header-logo-frame { border-color: #173c40; }
 @media (min-width: 768px) and (max-width: 991px) {
   .footer .footer-scene::after { top: calc(8px + (min(50cqw, 720px) * 250 / 1200)); }
 }
+
+/* Steady Sea Glass moon halo at night. */
+html[data-theme="dark"] .celestial-moon { filter: url(#moon-night-halo); }
