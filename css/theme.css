@@ -10,9 +10,9 @@ html[data-theme="light"] .footer,
 html[data-theme="light"] .footer::before,
 html[data-theme="light"] .header-area .main-header-area.sticky,
 html[data-theme="light"] .slicknav_menu .slicknav_nav { background-color: #f3eadb; }
-html[data-theme="light"] .slider_area .single_slider .slider_text h3.personal-intro,
-html[data-theme="light"] .slider_area .single_slider .slider_text h3.personal-intro > span,
-html[data-theme="light"] .slider_area .single_slider .slider_text h3.personal-intro .intro-location,
+html[data-theme="light"] .slider_area .single_slider .slider_text :is(h1, h3).personal-intro,
+html[data-theme="light"] .slider_area .single_slider .slider_text :is(h1, h3).personal-intro > span,
+html[data-theme="light"] .slider_area .single_slider .slider_text :is(h1, h3).personal-intro .intro-location,
 html[data-theme="light"] .header-area .main-header-area .main-menu ul li a,
 html[data-theme="light"] .slicknav_menu .slicknav_nav a,
 html[data-theme="light"] .footer .copy-right_text .copy_right,
@@ -98,7 +98,7 @@ html[data-theme="dark"] .footer-day-clouds { display: none; }
 }
 
 /* Separate the location from the name in the light intro. */
-html[data-theme="light"] .slider_area .single_slider .slider_text h3.personal-intro .intro-location { color: #426e67; }
+html[data-theme="light"] .slider_area .single_slider .slider_text :is(h1, h3).personal-intro .intro-location { color: #426e67; }
 
 /*  rotate the blades around their local hub; tower stays still. */
 
@@ -117,9 +117,9 @@ html[data-theme="light"] .slider_area .single_slider .slider_text h3.personal-in
   .footer::before,
   .slicknav_menu .slicknav_nav,
   .slicknav_menu .slicknav_icon-bar,
-  .slider_text h3.personal-intro,
-  .slider_text h3.personal-intro > span,
-  .slider_text h3.personal-intro .intro-location,
+  .slider_text :is(h1, h3).personal-intro,
+  .slider_text :is(h1, h3).personal-intro > span,
+  .slider_text :is(h1, h3).personal-intro .intro-location,
   .text-heading,
   .about-introduction,
   .about-introduction p,
@@ -183,6 +183,7 @@ html[data-theme="light"] .celestial-moon path { fill: #f3eadb; }
 /* Interactive footer car. */
 .footer-scene { --car-surface: #173c40; }
 html[data-theme="light"] .footer-scene { --car-surface: #f3eadb; }
+#car-travel:focus { outline: none; }
 #car-travel:focus-visible { outline: none; filter: drop-shadow(0 0 3px currentColor); }
 html[data-theme="light"] #headlight-beam { visibility: hidden; opacity: 0 !important; }
 @media (prefers-reduced-motion: reduce) {
@@ -212,3 +213,6 @@ html[data-theme="light"] .header-logo-frame { border-color: #173c40; }
 @media (min-width: 768px) and (max-width: 991px) {
   .footer .footer-scene::after { top: calc(8px + (min(50cqw, 720px) * 250 / 1200)); }
 }
+
+/* Steady Sea Glass moon halo at night. */
+html[data-theme="dark"] .celestial-moon { filter: url(#moon-night-halo); }
