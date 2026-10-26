@@ -162,3 +162,7 @@ Update this same record at consequential decisions, corrections, approvals and r
 ## 2026-10-24 — repository documentation location
 
 Phyo asked that this decision record enter the next PR, then explicitly requested a PR now to remain open until future website changes can accompany it. Added this record at `docs/PROJECT-RECORD.md` on a documentation branch based on released main. This authorizes publishing the documentation in a PR, not merging or deploying it. Keep this record current on the same branch as subsequent work, and avoid maintaining competing editable copies.
+
+## 2026-10-25 — theme-specific Nationals thumbnail preview
+
+Phyo chose to retain the approved dark-mode City Connect thumbnail and supplied `nats_alt_1_light-tone-v1(1).png` for light mode. The received file is 948×2048 pixels and 3,326,843 bytes. He requested preview approval before WebP preparation and site integration. Assistant prepared a self-contained comparison of the proposed W/Capitol crop and the unchanged dark thumbnail, with matching 441×390 frame ratios and preview-only vertical/zoom controls. Initial light crop is width 110%, left -5%, top -73%; dark retains width 100%, left 0, top -53.85%. These are proposals, not approved production values. No light WebP, site switch logic, or runtime change has been added. Await Phyo’s crop feedback; preserve the uploaded original and the existing dark asset. Saved comparison: `nationals-theme-comparison.html` (Library identity `libfile_99ca773cc1888191903c1f49cc57d8a7`).
