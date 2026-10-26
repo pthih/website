@@ -1,0 +1,133 @@
+/* Existing live light surfaces, with the approved charcoal foreground overrides below. */
+html[data-theme="light"] {
+  color-scheme: light;
+  --monitor-bg: #f8fafc;
+  --monitor-panel: #ffffff;
+  --monitor-line: #cbd5e1;
+  --monitor-text: #1e293b;
+  --monitor-muted: #475569;
+  --monitor-accent: #047857;
+  --monitor-header: #ffffff;
+  --preview-teal: var(--monitor-header);
+  --preview-ice: var(--monitor-text);
+  --preview-sea-glass: var(--monitor-accent);
+  --preview-photo-frame: var(--monitor-line);
+  --project-logo-color: var(--monitor-accent);
+}
+html[data-theme="light"] body,
+html[data-theme="light"] .sample-text-area,
+html[data-theme="light"] .portfolio-section,
+html[data-theme="light"] .about-area,
+html[data-theme="light"] .portfolio-area {
+  background: var(--monitor-bg) !important;
+  color: var(--monitor-text) !important;
+}
+html[data-theme="light"] .slider_area .single_slider.slider_bg_1,
+html[data-theme="light"] .footer,
+html[data-theme="light"] .footer::before,
+html[data-theme="light"] .header-area .main-header-area.sticky,
+html[data-theme="light"] .slicknav_menu .slicknav_nav {
+  background-color: var(--monitor-header) !important;
+  background-image: none !important;
+}
+html[data-theme="light"] .header-area .main-header-area,
+html[data-theme="light"] .header-area .main-header-area.sticky,
+html[data-theme="light"] .header-area .header_bottom_border,
+html[data-theme="light"] .portfolio-divider,
+html[data-theme="light"] .header-logo-frame {
+  border-color: var(--monitor-line) !important;
+}
+html[data-theme="light"] :is(h1,h2,h3,h4,h5,h6,#about-me,.portfolio-heading,
+  .about-introduction .about-lead,.about-background-label,
+  .single_gallery .gallery_heading h4,
+  .single_gallery .gallery_heading h4 a) {
+  color: var(--monitor-text) !important;
+}
+html[data-theme="light"] :is(p,.about-background,.about-introduction .about-approach,
+  .about-disclaimer,.single_gallery p,.footer .copy_right) {
+  color: var(--monitor-muted) !important;
+}
+html[data-theme="light"] :is(a,.header-social-link,.footer-social-link,
+  .footer .copy_right a,.footer-scene,.intro-down-link) {
+  color: var(--monitor-accent) !important;
+}
+html[data-theme="light"] .more-about-link,
+html[data-theme="light"] .logo-switch button {
+  color: var(--monitor-accent) !important;
+  border-color: var(--monitor-accent) !important;
+  background: transparent !important;
+}
+html[data-theme="light"] .more-about-link:hover,
+html[data-theme="light"] .more-about-link:focus-visible,
+html[data-theme="light"] .logo-switch button[aria-pressed="true"],
+html[data-theme="light"] .logo-switch button:hover {
+  background: var(--monitor-accent) !important;
+  color: var(--monitor-bg) !important;
+}
+html[data-theme="light"] .about-introduction { border-left-color: var(--monitor-accent) !important; }
+html[data-theme="light"] .theme-toggle {
+  background: var(--monitor-panel) !important;
+  color: var(--monitor-accent) !important;
+  border-color: var(--monitor-line) !important;
+  box-shadow: 0 3px 14px #0002;
+}
+html[data-theme="light"] .theme-toggle:focus-visible { outline-color: var(--monitor-accent) !important; }
+html[data-theme="light"] .sea-glass-header-logo,
+html[data-theme="light"] .footer .copy-right_text img {
+  filter: brightness(0) saturate(100%) invert(34%) sepia(26%) saturate(1468%) hue-rotate(112deg) brightness(91%) contrast(102%) !important;
+}
+/* The footer illustration has a white sky in this palette. */
+html[data-theme="light"] .footer-scene { --car-surface: var(--monitor-header); }
+html[data-theme="light"] .celestial-moon path { fill: var(--monitor-header) !important; }
+
+/* Approved charcoal foreground colors on the existing light surfaces. */
+html[data-theme="light"] { --light-ink: #373432; --light-muted: #706a65; --preview-photo-frame: var(--light-ink); --project-logo-color: var(--light-ink); }
+html[data-theme="light"] body,
+html[data-theme="light"] .text-heading,
+html[data-theme="light"] .about-introduction .about-lead,
+html[data-theme="light"] .about-background-label,
+html[data-theme="light"] .single_gallery .gallery_heading h4,
+html[data-theme="light"] .single_gallery .gallery_heading h4 a,
+html[data-theme="light"] .single_gallery .gallery_heading > span,
+html[data-theme="light"] .about-contact a,
+html[data-theme="light"] .single_gallery .archive-link,
+html[data-theme="light"] .slider_area .single_slider .slider_text :is(h1,h3).personal-intro,
+html[data-theme="light"] .slider_area .single_slider .slider_text :is(h1,h3).personal-intro > span,
+html[data-theme="light"] .header-area .main-header-area .main-menu ul li a.header-social-link,
+html[data-theme="light"] .slicknav_menu .slicknav_nav a.header-social-link,
+html[data-theme="light"] .slicknav_menu .slicknav_nav a,
+html[data-theme="light"] .footer-social-link,
+html[data-theme="light"] .footer .copy-right_text .copy_right,
+html[data-theme="light"] .footer .copy-right_text .copy_right a,
+html[data-theme="light"] .footer-scene,
+html[data-theme="light"] .intro-down-link,
+html[data-theme="light"] .burma-original-art { color: var(--light-ink); }
+html[data-theme="light"] .sample-text-area p,
+html[data-theme="light"] .single_gallery p,
+html[data-theme="light"] .about-background,
+html[data-theme="light"] .slider_area .single_slider .slider_text :is(h1,h3).personal-intro .intro-location { color: var(--light-muted); }
+html[data-theme="light"] .about-introduction,
+html[data-theme="light"] .portfolio-divider,
+html[data-theme="light"] .header-logo-frame { border-color: var(--light-ink); }
+html[data-theme="light"] .more-about-link { color: var(--light-ink); border-color: var(--light-ink); }
+html[data-theme="light"] .more-about-link:hover { color: var(--monitor-bg); background: var(--light-ink); }
+html[data-theme="light"] .logo-switch button { color: var(--light-ink); border-color: var(--light-ink); }
+html[data-theme="light"] .logo-switch button[aria-pressed="true"],
+html[data-theme="light"] .logo-switch button:hover { background: var(--light-ink); color: var(--monitor-bg); }
+html[data-theme="light"] .theme-toggle { background: var(--light-ink); border-color: var(--light-ink); color: var(--monitor-bg); }
+html[data-theme="light"] .slicknav_menu .slicknav_icon-bar { background: var(--light-ink); }
+html[data-theme="light"] .sea-glass-header-logo { filter: brightness(0); opacity: .8; }
+
+/* Preserve live white and cool-white surfaces; replace foreground colors only. */
+html[data-theme="light"] {
+  --monitor-text: var(--light-ink);
+  --monitor-muted: var(--light-muted);
+  --monitor-accent: var(--light-ink);
+  --project-logo-color: var(--light-ink);
+}
+html[data-theme="light"] .sea-glass-header-logo { filter: brightness(0) !important; opacity: .8; }
+
+/* Match the header frame to the selected light-mode logo color. */
+html[data-theme="light"] .header-logo-frame {
+  border-color: var(--light-ink) !important;
+}

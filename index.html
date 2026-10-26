@@ -123,7 +123,9 @@ html[data-theme="dark"] { --project-logo-color:#9dd7c8; }
   }
 }
 </script>
-    <link rel="stylesheet" href="css/monitor-light-theme.css">
+<link rel="stylesheet" href="css/monitor-light-theme.css">
+<link rel="stylesheet" href="css/dark-palette.css">
+<link rel="stylesheet" href="css/light-palette.css">
 </head>
 
 <body>
@@ -364,7 +366,7 @@ html[data-theme="dark"] { --project-logo-color:#9dd7c8; }
                         <div class="col-xl-6 col-lg-6 col-md-6">
                             <div class="single_gallery">
                                 <div class="thumb">
-                                    <a href="https://www.reddit.com/r/Nationals/s/JF5Ac81IYy" style="position:relative;width:441px;aspect-ratio:441/390;"><img src="img/gallery/nationals-city-connect.webp" alt="Washington Nationals City Connect wallpaper with WSH lettering and cherry blossoms on a dark jersey texture" width="946" height="2048" loading="lazy" style="position:absolute;width:100%;height:auto;top:-53.85%;left:0;"></a>
+                                    <a class="nationals-thumbnail" href="https://www.reddit.com/r/Nationals/s/JF5Ac81IYy" style="position:relative;width:441px;aspect-ratio:441/390;"><img id="nationals-theme-thumbnail" src="img/gallery/nationals-city-connect.webp" alt="Washington Nationals City Connect wallpaper with WSH lettering and cherry blossoms on a dark jersey texture" width="946" height="2048" loading="lazy" style="position:absolute;width:100%;height:auto;left:0;"></a>
                                 </div>
                                 <div class="gallery_heading">
                                     <span>Wallpaper Design</span>
@@ -520,8 +522,8 @@ html[data-theme="dark"] { --project-logo-color:#9dd7c8; }
             </g>
 
             <g class="celestial-house-layer"><defs><filter id="moon-night-halo" x="-100%" y="-100%" width="300%" height="300%" color-interpolation-filters="sRGB">
-<feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#9dd7c8" flood-opacity="1"/>
-<feDropShadow dx="0" dy="0" stdDeviation="1.5" flood-color="#9dd7c8" flood-opacity="0.4"/>
+<feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#eee8dc" flood-opacity="1"/>
+<feDropShadow dx="0" dy="0" stdDeviation="1.5" flood-color="#eee8dc" flood-opacity="0.4"/>
 </filter></defs><g class="celestial-orbit celestial-moon"><g class="footer-night celestial-art" transform="translate(-30 -192.603712) translate(769 83) scale(1.2) rotate(-45) translate(-769 -83)" stroke-width="1.6666666666666667">
               <path d="M782.5 59.62 A27 27 0 1 0 782.5 106.38 Q745 83 782.5 59.62Z"/>
             </g></g>
@@ -769,6 +771,7 @@ Based on a <a href="https://colorlib.com" target="_blank">Colorlib</a> template,
 <script src="js/turbines.js"></script>
 <script src="js/footer-mobile-fit.js"></script>
 <script src="js/car.js"></script>
+<script src="js/nationals-thumbnail.js"></script>
 </body>
 
 </html>

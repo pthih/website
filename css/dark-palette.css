@@ -1,0 +1,45 @@
+/* Approved charcoal and ivory dark palette. Light theme retains its existing values. */
+html[data-theme="dark"] {
+  --preview-teal: #242426;
+  --preview-ice: #eee8dc;
+  --charcoal-accent: #eee8dc;
+  --preview-sea-glass: var(--charcoal-accent);
+  --project-logo-color: #eee8dc;
+  --preview-photo-frame: #eee8dc;
+}
+html[data-theme="dark"] .slider_area .single_slider.slider_bg_1,
+html[data-theme="dark"] .footer,
+html[data-theme="dark"] .footer::before,
+html[data-theme="dark"] .header-area .main-header-area.sticky,
+html[data-theme="dark"] .slicknav_menu .slicknav_nav { background-color: #242426; }
+html[data-theme="dark"] body,
+html[data-theme="dark"] .sample-text-area,
+html[data-theme="dark"] .portfolio-section { background: #303033; color: #ded7cb; }
+html[data-theme="dark"] #about-me,
+html[data-theme="dark"] .portfolio-heading,
+html[data-theme="dark"] .about-introduction .about-lead,
+html[data-theme="dark"] .about-background-label,
+html[data-theme="dark"] .single_gallery .gallery_heading h4,
+html[data-theme="dark"] .single_gallery .gallery_heading h4 a { color: #eee8dc; }
+html[data-theme="dark"] .sample-text-area p,
+html[data-theme="dark"] .single_gallery p,
+html[data-theme="dark"] .about-background { color: #c8c1b7; }
+html[data-theme="dark"] .about-contact a,
+html[data-theme="dark"] .single_gallery .gallery_heading a,
+html[data-theme="dark"] .single_gallery .archive-link,
+html[data-theme="dark"] .header-area .main-header-area .main-menu ul li a.header-social-link,
+html[data-theme="dark"] .slicknav_menu .slicknav_nav a.header-social-link,
+html[data-theme="dark"] .footer-social-link { color: var(--charcoal-accent); }
+html[data-theme="dark"] .about-introduction,
+html[data-theme="dark"] .portfolio-divider { border-color: var(--charcoal-accent); }
+html[data-theme="dark"] .logo-switch button { color: var(--charcoal-accent); border-color: var(--charcoal-accent); background: transparent; }
+html[data-theme="dark"] .logo-switch button[aria-pressed="true"],
+html[data-theme="dark"] .logo-switch button:hover { background: var(--charcoal-accent); color: #242426; }
+html[data-theme="dark"] .burma-logo-stage .burma-original { background: #303033; }
+html[data-theme="dark"] .burma-original-art { color: #eee8dc; }
+html[data-theme="dark"] .footer-scene { color: #eee8dc; --car-surface: #242426; }
+html[data-theme="dark"] .celestial-moon path { fill: #242426; }
+html[data-theme="dark"] .theme-toggle { background: #eee8dc; border-color: #eee8dc; color: #242426; }
+html[data-theme="dark"] .header-logo-frame { border-color: var(--charcoal-accent); }
+html[data-theme="dark"] .sea-glass-header-logo { filter: brightness(0) saturate(100%) invert(94%) sepia(12%) saturate(285%) hue-rotate(344deg) brightness(99%) contrast(89%); }
+html[data-theme="dark"] .theme-toggle:focus-visible { outline-color: var(--charcoal-accent); }
