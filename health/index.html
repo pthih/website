@@ -49,6 +49,8 @@ function render(){
  document.getElementById('updated').textContent=data?'Collected '+new Date(data.updated_at).toLocaleString(undefined,{year:'numeric',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',hourCycle:'h23'})+(homeFresh?'':' · stale'):'Home summary unavailable';
  const container=document.getElementById('services');container.replaceChildren();
  const today=new Date().toISOString().slice(0,10);
+ const reportDay=remote&&Number.isFinite(Date.parse(remote.updated_at))?new Date(remote.updated_at).toISOString().slice(0,10):today;
+ const remoteHistoryCurrent=day=>remote&&(remoteFresh||day<reportDay);
  for(const [index,name] of names.entries()){
   const row=document.createElement('div');row.className='service';
   const head=document.createElement('div');head.className='service-head';
@@ -62,9 +64,9 @@ function render(){
   for(let i=0;i<90;i++){
    const date=new Date();date.setUTCDate(date.getUTCDate()-89+i);const day=date.toISOString().slice(0,10);
    let dayState='unknown';
-   if(index===0&&remote&&!(day===today&&!remoteFresh))dayState=remote.website_days?.[day]||'unknown';
+   if(index===0&&remoteHistoryCurrent(day))dayState=remote.website_days?.[day]||'unknown';
    if(index===1)dayState=data?.days?.[day]||'unknown';
-   if(index===2&&remote&&!(day===today&&!remoteFresh))dayState=remote.outpost_days?.[day]||'unknown';
+   if(index===2&&remoteHistoryCurrent(day))dayState=remote.outpost_days?.[day]||'unknown';
    const kind=dayState==='healthy'?'healthy':dayState==='unknown'?'unknown':'warning';
    const button=document.createElement('button');button.className='bar '+kind;
    const description=name+' · '+day+' · '+(dayState==='healthy'?(index===2?'Remote monitor reported consistently':'Recorded checks healthy'):dayState==='unknown'?'No complete observations':'Service interruption observed');
