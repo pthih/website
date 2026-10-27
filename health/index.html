@@ -57,7 +57,7 @@ function render(){
   const label=document.createElement('span');label.textContent=name;
   const status=document.createElement('span');status.className='state';
   const current=index===0?website:index===1?home:outpost;
-  status.textContent=index===2?(current==='healthy'?'Reporting':'Unknown'):current==='healthy'?'Operational':current==='degraded'?'Needs attention':'Unknown';
+  status.textContent=index===2?(current==='healthy'?'Operational':'Unknown'):current==='healthy'?'Operational':current==='degraded'?'Needs attention':'Unknown';
   status.style.color=current==='healthy'?'var(--accent)':current==='degraded'?'var(--warn)':'var(--muted)';
   head.append(label,status);row.append(head);
   const bars=document.createElement('div');bars.className='bars';
