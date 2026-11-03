@@ -1,0 +1,17 @@
+/* Enlarged project artwork; caption links continue to open archived websites. */
+/* Bootstrap resets dialog to display:block, including closed dialogs. */
+#logo-viewer:not([open]) { display: none; }
+#logo-viewer { width: min(900px, calc(100vw - 32px)); max-width: none; max-height: calc(100dvh - 32px); padding: 20px; border: 1px solid currentColor; border-radius: 12px; background: #303033; color: #eee8dc; overflow: auto; }
+#logo-viewer::backdrop { background: rgb(0 0 0 / .75); }
+html[data-theme="light"] #logo-viewer { background: #f8fafc; color: #373432; }
+.logo-viewer-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+#logo-viewer h2 { margin: 0; font-size: 20px; color: inherit !important; }
+.logo-viewer-close { flex: 0 0 44px; width: 44px; height: 44px; background: transparent; color: inherit; border: 1px solid currentColor; border-radius: 50%; font-size: 28px; cursor: pointer; }
+.logo-viewer-close:focus-visible, [data-logo-viewer]:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+.logo-viewer-image { display: block; width: 100%; height: auto; max-height: calc(100dvh - 140px); object-fit: contain; }
+html:has(#logo-viewer[open]) { overflow: hidden; }
+[data-logo-viewer] { cursor: zoom-in; }
+
+/* Center the close mark independently of font metrics and browser button padding. */
+#logo-viewer .logo-viewer-close { display: flex; align-items: center; justify-content: center; padding: 0; line-height: 1; box-sizing: border-box; }
+#logo-viewer .logo-viewer-close svg { display: block; flex: none; pointer-events: none; }

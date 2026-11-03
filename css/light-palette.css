@@ -66,9 +66,9 @@ html[data-theme="light"] .logo-switch button:hover {
 }
 html[data-theme="light"] .about-introduction { border-left-color: var(--monitor-accent) !important; }
 html[data-theme="light"] .theme-toggle {
-  background: var(--monitor-panel) !important;
-  color: var(--monitor-accent) !important;
-  border-color: var(--monitor-line) !important;
+  background: #242426 !important;
+  color: var(--monitor-bg) !important;
+  border-color: #242426 !important;
   box-shadow: 0 3px 14px #0002;
 }
 html[data-theme="light"] .theme-toggle:focus-visible { outline-color: var(--monitor-accent) !important; }
@@ -114,7 +114,7 @@ html[data-theme="light"] .more-about-link:hover { color: var(--monitor-bg); back
 html[data-theme="light"] .logo-switch button { color: var(--light-ink); border-color: var(--light-ink); }
 html[data-theme="light"] .logo-switch button[aria-pressed="true"],
 html[data-theme="light"] .logo-switch button:hover { background: var(--light-ink); color: var(--monitor-bg); }
-html[data-theme="light"] .theme-toggle { background: var(--light-ink); border-color: var(--light-ink); color: var(--monitor-bg); }
+html[data-theme="light"] .theme-toggle { background: #242426; border-color: #242426; color: var(--monitor-bg); }
 html[data-theme="light"] .slicknav_menu .slicknav_icon-bar { background: var(--light-ink); }
 html[data-theme="light"] .sea-glass-header-logo { filter: brightness(0); opacity: .8; }
 
