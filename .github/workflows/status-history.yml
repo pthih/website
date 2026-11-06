@@ -1,0 +1,26 @@
+name: Validate public status history
+on:
+  pull_request:
+    paths: ['health/index.html', 'tests/*.cjs', '.github/workflows/status-history.yml']
+  push:
+    branches: [main]
+    paths: ['health/index.html', 'tests/*.cjs', '.github/workflows/status-history.yml']
+permissions:
+  contents: read
+jobs:
+  status-history:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - run: |
+          node tests/test-public-home.cjs
+          node tests/test-health-responsive.cjs
+          TZ=UTC node tests/test-central-calendar.cjs
+          TZ=Asia/Tokyo node tests/test-central-calendar.cjs
+          TZ=America/Los_Angeles node tests/test-central-calendar.cjs
