@@ -12,9 +12,9 @@ const window={matchMedia:query=>{const max=Number(query.match(/\d+/)[0]);const m
 const document={getElementById:el,createElement:()=>new Element()};
 const html=fs.readFileSync(path.join(__dirname,'../health/index.html'),'utf8');
 const script=html.slice(html.indexOf('<script>')+8,html.indexOf('async function refresh()'));
-const ctx=vm.createContext({window,document,Date});vm.runInContext(script,ctx);
+const ctx=vm.createContext({window,document,Date,Intl});vm.runInContext(script,ctx);
 const now=new Date().toISOString();ctx.fixture={updated_at:now,report_source:'outpost',home_state:'healthy',days:{},incidents:[]};
-vm.runInContext('data=fixture;remote={...fixture,website_state:"healthy",outpost_state:"healthy",website_days:{},outpost_days:{}}',ctx);
+vm.runInContext('data=fixture;remote={...fixture,website_state:"healthy",outpost_state:"healthy",website_central_days:{},website_legacy_utc_days:{}}',ctx);
 for(const [screen,days] of [[375,30],[430,30],[560,30],[561,60],[768,60],[1024,60],[1025,90],[1280,90]]){
  width=screen;media[0].change();
  assert.equal(el('history-heading').textContent,'System Status · Past '+days+' Days');
@@ -22,8 +22,8 @@ for(const [screen,days] of [[375,30],[430,30],[560,30],[561,60],[768,60],[1024,6
  for(const row of el('services').children){
   const bars=row.children[1].children;
   assert.equal(bars.length,days);assert.equal(row.children[2].children[0].textContent,(days-1)+' days ago');
-  assert.ok(bars.at(-1).title.includes(now.slice(0,10)));
-  const first=new Date();first.setUTCDate(first.getUTCDate()-days+1);
+  assert.ok(bars.at(-1).title.includes(new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())));
+  const first=new Date(new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())+'T00:00:00Z');first.setUTCDate(first.getUTCDate()-days+1);
   assert.ok(bars[0].title.includes(first.toISOString().slice(0,10)));
   bars[0].onclick();assert.equal(el('inspector').textContent,bars[0].title);
  }
