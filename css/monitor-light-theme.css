@@ -80,3 +80,8 @@ html[data-theme="light"] .footer .copy-right_text img {
 /* The footer illustration has a white sky in this palette. */
 html[data-theme="light"] .footer-scene { --car-surface: var(--monitor-header); }
 html[data-theme="light"] .celestial-moon path { fill: var(--monitor-header) !important; }
+
+/* Cover the revised logo with the same surface as the surrounding light theme. */
+html[data-theme="light"] .single_gallery .thumb .burma-original {
+  background: var(--monitor-bg);
+}
